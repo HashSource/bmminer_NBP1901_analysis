@@ -1,0 +1,203 @@
+ [1970-01-01 21:36:00.924] Log file path: /www/pages/bmminer.log Open flag: a+
+ [1970-01-01 21:36:01.943] This is fix-freq version
+
+ [1970-01-01 21:36:01.944] Miner compile time: Tue Dec  6 16:12:30 CST 2022 type: Antminer S19 Pro
+
+ [1970-01-01 21:36:01.944] commit version: dd076742 2022-10-27 22:42:25, build by: jenkins 2022-12-06 16:28:38
+
+ [1970-01-01 21:36:01.944] opt_multi_version     = 1
+
+ [1970-01-01 21:36:01.944] opt_bitmain_ab        = 1
+
+ [1970-01-01 21:36:01.944] mid_auto_gen          = 0
+
+ [1970-01-01 21:36:01.945] opt_bitmain_work_mode = 0
+
+ [1970-01-01 21:36:01.945] mmap fpga_mem_addr_hal = 0xb5800000
+
+ [1970-01-01 21:36:01.945] HASH_ON_PLUG V9 = 0x7
+
+ [1970-01-01 21:36:01.946] Note: front fan is power on!
+
+ [1970-01-01 21:36:01.946] Note: rear fan is power on!
+
+ [1970-01-01 21:36:01.946] start the http log.
+
+ [1970-01-01 21:36:01.947] httpListenThread start ret=0
+ [1970-01-01 21:36:01.950] start listen on 6060 ...
+ [1970-01-01 21:36:01.954] load machine NBP1901 conf
+
+ [1970-01-01 21:36:01.955] machine : NBP1901 
+
+ [1970-01-01 21:36:01.955] chain_num 4, chain_domain_num 38, chain_asic_num 114, domain_asic_num 3
+
+ [1970-01-01 21:36:07.957] miner ID : 8054cd0a0f41a81c
+
+ [1970-01-01 21:36:07.957] FPGA Version = 0xB031
+
+ [1970-01-01 21:36:07.958] HASH_ON_PLUG V9 = 0x7
+
+ [1970-01-01 21:36:07.958] ==========================capability start==========================
+
+ [1970-01-01 21:36:07.958] board num = 3
+
+ [1970-01-01 21:36:07.958] board id = 0, chain num = 1
+
+ [1970-01-01 21:36:07.958] 	chain id = 0
+
+ [1970-01-01 21:36:07.958] board id = 1, chain num = 1
+
+ [1970-01-01 21:36:07.959] 	chain id = 1
+
+ [1970-01-01 21:36:07.959] board id = 2, chain num = 1
+
+ [1970-01-01 21:36:07.959] 	chain id = 2
+
+ [1970-01-01 21:36:07.959] ==========================capability end============================
+
+ [1970-01-01 21:36:07.959] chain num = 3
+ [1970-01-01 21:36:09.791] [chain 0]
+
+0x0000 11 4A 10 EF BC C7 7C 03   89 2B A1 F8 7B D0 19 7C 
+0x0010 E3 37 8B 2D 9D 21 9D 65   B1 4C 76 ED 3C 16 76 80 
+0x0020 CF 4B AC B1 D2 A8 7E AE   1D 97 50 0A 8D 80 CD 8A 
+0x0030 6F D9 E2 1F 0E A3 CF CF   AE 95 D2 24 F4 D3 76 44 
+0x0040 F5 A1 4F D1 1F 2C F5 4F   9C 30 FF FF FF FF FF FF 
+0x0050 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0060 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0070 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0080 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0090 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00A0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00B0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00C0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00D0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00E0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00F0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF 5A 
+
+ [1970-01-01 21:36:11.593] [chain 1]
+
+0x0000 11 4A 7A D5 AC FF 3A 0D   76 92 A9 D4 56 8E 9B 63 
+0x0010 B9 3F 68 CB AE E1 5E 3A   00 69 6B 15 0E 61 A5 45 
+0x0020 E3 0F 95 13 B2 30 6B 74   6E 05 A2 19 42 43 CC 0F 
+0x0030 1C 97 A2 D1 73 A2 69 77   F4 5A 62 51 5A 39 55 7D 
+0x0040 31 5E 88 8C 65 CC A7 BC   FB 27 FF FF FF FF FF FF 
+0x0050 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0060 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0070 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0080 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0090 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00A0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00B0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00C0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00D0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00E0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00F0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF 5A 
+
+ [1970-01-01 21:36:13.397] [chain 2]
+
+0x0000 11 4A A8 4A 40 DE 11 B4   43 1F 33 18 0C D3 51 63 
+0x0010 45 77 3B 98 72 BC CF 95   F2 20 E8 F6 73 94 E6 F2 
+0x0020 4D 9E 65 6D D1 54 16 AD   C5 28 BA C7 14 8D A3 51 
+0x0030 B5 71 83 FB C5 9C 80 CF   C6 83 7D 3A 9A ED C2 E1 
+0x0040 AF 6E A8 E1 D2 A6 67 84   EE 47 FF FF FF FF FF FF 
+0x0050 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0060 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0070 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0080 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x0090 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00A0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00B0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00C0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00D0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00E0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF FF 
+0x00F0 FF FF FF FF FF FF FF FF   FF FF FF FF FF FF FF 5A 
+
+ [1970-01-01 21:36:13.400] fan_eft : 0  fan_pwm : 100
+
+ [1970-01-01 21:36:13.400] create thread
+
+ [1970-01-01 21:36:13.400] fixed working voltage = 1260
+
+ [1970-01-01 21:36:13.400] Chain [0] PCB Version: 0x011e
+
+ [1970-01-01 21:36:13.400] Chain [0] BOM Version: 0x0100
+
+ [1970-01-01 21:36:13.401] Chain [1] PCB Version: 0x011e
+
+ [1970-01-01 21:36:13.401] Chain [1] BOM Version: 0x0100
+
+ [1970-01-01 21:36:13.401] Chain [2] PCB Version: 0x011e
+
+ [1970-01-01 21:36:13.401] Chain [2] BOM Version: 0x0100
+
+ [1970-01-01 21:36:35.583] Fan check passed.
+
+ [1970-01-01 21:36:36.419] chain[0] PIC jump to app
+
+ [1970-01-01 21:36:37.906] Check chain[0] PIC fw version=0x89
+
+ [1970-01-01 21:36:39.083] chain[1] PIC jump to app
+
+ [1970-01-01 21:36:40.569] Check chain[1] PIC fw version=0x89
+
+ [1970-01-01 21:36:41.746] chain[2] PIC jump to app
+
+ [1970-01-01 21:36:43.233] Check chain[2] PIC fw version=0x89
+
+ [1970-01-01 21:36:43.574] create thread
+
+ [1970-01-01 21:36:43.574] max sensor num = 4
+ [1970-01-01 21:36:43.574] temperature_monitor_thread start...
+ [1970-01-01 21:36:47.675] power type version: 0x0074
+
+ [1970-01-01 21:36:47.676] Enter sleep to make sure power release finish.
+
+ [1970-01-01 21:37:02.441] chain avg vol drop to 0.96
+ [1970-01-01 21:37:18.679] Slept 30 seconds, diff = 4.
+
+ [1970-01-01 21:37:18.679] set_voltage_by_steps to 1500.
+
+ [1970-01-01 21:37:24.008] start up min temp by 75a = 28
+ [1970-01-01 21:37:24.018] set UART baud to 115200
+
+ [1970-01-01 21:37:28.526] chain avg vol rise to 15.32
+ [1970-01-01 21:37:32.330] Chain[0]: find 114 asic, times 0
+
+ [1970-01-01 21:37:40.043] Chain[1]: find 114 asic, times 0
+
+ [1970-01-01 21:37:47.697] Chain[2]: find 114 asic, times 0
+
+ [1970-01-01 21:37:47.697] pulse_mode = 1, ccdly_sel = 1, pwth_sel = 1
+
+ [1970-01-01 21:37:52.339] min freq in eeprom = 525
+
+ [1970-01-01 21:37:52.340] fixed frequency is 525
+
+ [1970-01-01 21:37:52.340] Bring up temperature is 28
+
+ [1970-01-01 21:37:52.481] set UART baud to 12000000
+
+ [1970-01-01 21:37:52.735] set_voltage_by_steps to 1260.
+
+ [1970-01-01 21:37:59.818] STATUS_INITED: soc init done!
+
+ [1970-01-01 21:37:59.819] create thread
+
+ [1970-01-01 21:37:59.819] create thread
+
+ [1970-01-01 21:38:02.196] start to init...
+
+ [1970-01-01 21:38:10.564] Init done!
+
+ [1970-01-01 21:38:10.564] STATUS_OKAY
+
+ [1970-01-01 21:38:10.565] start the cached job
+ [1970-01-01 21:38:10.565] Version num 8
+
+ [1970-01-01 21:38:10.565] Mask num 0xe000
+
+ [1970-01-01 21:38:10.565] freq = 525, percent = 90, hcn = 12480, timeout = 449
+
+ [1970-01-01 21:38:10.569] set_start_time_point total_tv_start_sys=77891 total_tv_end_sys=77892
+

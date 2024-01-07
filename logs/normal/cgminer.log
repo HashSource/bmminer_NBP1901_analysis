@@ -1,0 +1,38 @@
+ [1970-01-01 21:36:00.918] Log file path: /www/pages/cgminer.log Open flag: a+
+ [1970-01-01 21:36:00.918] Started cgminer 1.0.0
+ [1970-01-01 21:36:00.918] Loaded configuration file /config/cgminer.conf
+ [1970-01-01 21:36:00.918] Start api function
+
+ [1970-01-01 21:36:01.931] cgminer_socket_init reg bitmain_api_detect return: 0
+ [1970-01-01 21:36:01.943] cgminer_socket_init reg bitmain_update_job return: 0
+ [1970-01-01 21:36:01.991] cgminer_socket_init reg bitmain_shutdown return: 0
+ [1970-01-01 21:36:02.003] cgminer_socket_init reg bitmain_flush_api return: 0
+ [1970-01-01 21:36:02.003] Miner compile time: Tue Dec  6 16:12:30 CST 2022 type: Antminer S19 Pro
+ [1970-01-01 21:38:01.194] bmminer init done!!!
+ [1970-01-01 21:38:01.195] about to send detect
+ [1970-01-01 21:38:01.195] set_start_time_point total_tv_start_sys=77882 total_tv_end_sys=77883
+
+ [1970-01-01 21:38:01.196] Probing for an alive pool
+ [1970-01-01 21:38:01.198] POOL 1 support ab mode!
+ [1970-01-01 21:38:01.199] POOL 2 support ab mode!
+ [1970-01-01 21:38:01.199] real mask = 0xe000, bit_num = 3
+ [1970-01-01 21:38:01.199] real mask = 0xe000, bit_num = 3
+ [1970-01-01 21:38:01.199] POOL 0 support ab mode!
+ [1970-01-01 21:38:01.199] real mask = 0xe000, bit_num = 3
+ [1970-01-01 21:38:01.201] Switching to pool 2 stratum+tcp://192.168.1.194:3333 - first alive pool
+ [1970-01-01 21:38:01.202] Pool 1 stratum+tcp://192.168.1.194:3333 alive, testing stability
+ [1970-01-01 21:38:01.202] in stratum_sthread , pool: 0, pool_url: stratum+tcp://192.168.1.194:3333
+ [1970-01-01 21:38:01.202] Pool 0 stratum+tcp://192.168.1.194:3333 alive, testing stability
+ [1970-01-01 21:38:01.203] in stratum_sthread , pool: 1, pool_url: stratum+tcp://192.168.1.194:3333
+ [1970-01-01 21:38:01.203] in stratum_sthread , pool: 2, pool_url: stratum+tcp://192.168.1.194:3333
+ [1970-01-01 21:38:01.957] Pool 1 difficulty changed to 8192
+ [1970-01-01 21:38:01.957] Pool 2 difficulty changed to 8192
+ [1970-01-01 21:38:01.958] Pool 0 difficulty changed to 8192
+ [1970-01-01 21:38:01.960] Network diff set to 73.2T
+ [1970-01-01 21:38:01.960] Stratum from pool 2 requested work restart
+ [1970-01-01 21:38:01.960] Waiting for work to be available from pools.
+ [1970-01-01 21:38:02.043] Stratum from pool 2 requested work restart
+ [1970-01-01 21:38:02.197] Work available from pools, resuming.
+ [1970-01-01 21:38:02.199] Pool 0 stratum+tcp://192.168.1.194:3333 stable for >120 seconds
+ [1970-01-01 21:38:02.199] Switching to pool 0 stratum+tcp://192.168.1.194:3333
+ [1970-01-01 21:38:46.751] Pool 0 difficulty changed to 96398
