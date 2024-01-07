@@ -1,0 +1,8 @@
+.env
+.symbols
+.ghidra_projects
+decompile.log
+
+decompilations/bmminer/*
+!decompilations/bmminer/FUN_*-*.c
+!decompilations/bmminer/FUN_*-*.md

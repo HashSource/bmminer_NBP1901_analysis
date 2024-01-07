@@ -1,0 +1,10 @@
+
+void FUN_000458e4(uint param_1)
+
+{
+  FUN_00040390(0x12,param_1 | 0x80808000);
+  DAT_00505110 = DAT_0050510c;
+  FUN_00044c24(DAT_00505118);
+  return;
+}
+
