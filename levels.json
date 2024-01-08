@@ -1,0 +1,29 @@
+{
+  "miner": "S19 Pro",
+  "levels": [
+    {
+      "frequency": 525,
+      "voltage": 1260
+    },
+    {
+      "frequency": 525,
+      "voltage": 1280
+    },
+    {
+      "frequency": 525,
+      "voltage": 1300
+    },
+    {
+      "frequency": 500,
+      "voltage": 1260
+    },
+    {
+      "frequency": 500,
+      "voltage": 1280
+    },
+    {
+      "frequency": 500,
+      "voltage": 1300
+    }
+  ]
+}
