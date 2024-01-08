@@ -4,5 +4,12 @@
 # https://junyelee.blogspot.com/2021/01/emulating-arm-with-qemu-on-debianubuntu.html
 
 chmod +x ./bmminer
+chmod +x ./cgminer
 
-qemu-arm -L /usr/arm-linux-gnueabihf ./bmminer --help
+# Using libraies from unpacked FW
+
+# Open Socket Using bmminer
+qemu-arm -L /home/danielsokil/Downloads/Antminer-FW-Peek/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./bmminer
+
+# Cgminer will attempt to open the bmminer socket
+qemu-arm -L /home/danielsokil/Downloads/Antminer-FW-Peek/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./cgminer
