@@ -1,2526 +1,1654 @@
-
-/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
-
-int FUN_0001b4ac(void)
-
+int sub_1B4AC()
 {
-  int iVar1;
-  bool bVar2;
-  size_t __nmemb;
-  size_t __nmemb_00;
-  undefined2 uVar3;
-  int *piVar4;
-  int *piVar5;
-  char *pcVar6;
-  size_t sVar7;
-  char *pcVar8;
-  int *piVar9;
-  undefined4 uVar10;
-  uint uVar11;
-  int *piVar12;
-  void *pvVar13;
-  int iVar14;
-  int *piVar15;
-  int iVar16;
-  int iVar17;
-  undefined uVar18;
-  int iVar19;
-  int iVar20;
-  uint uVar21;
-  void *pvVar22;
-  undefined auStack_924 [252];
-  undefined4 local_828;
-  undefined4 local_824;
-  undefined4 local_820;
-  undefined4 local_81c;
-  undefined4 local_818;
-  undefined4 local_814;
-  undefined4 local_810;
-  undefined4 local_80c;
-  undefined4 local_808;
-  undefined4 uStack_804;
-  undefined2 uStack_800;
-  undefined local_7fe;
-  
-  piVar4 = (int *)FUN_0004d6e4("/etc/topol.conf",0,auStack_924);
-  if ((piVar4 == (int *)0x0) || (*piVar4 != 0)) {
-    if (DAT_0007eb9c < 4) {
-      return -1;
-    }
-    snprintf((char *)&local_828,0x800,"load topol config file %s failed\n","/etc/topol.conf");
-    FUN_0002e584(3,&local_828,0);
-    return -1;
-  }
-  piVar5 = (int *)FUN_0004e234(piVar4,"machine");
-  if ((piVar5 == (int *)0x0) || (*piVar5 != 2)) {
-    if (3 < DAT_0007eb9c) {
-      local_828._0_1_ = s_get_machine_failed_00061910[0];
-      local_828._1_1_ = s_get_machine_failed_00061910[1];
-      local_828._2_1_ = s_get_machine_failed_00061910[2];
-      local_828._3_1_ = s_get_machine_failed_00061910[3];
-      local_824._0_1_ = s_get_machine_failed_00061910[4];
-      local_824._1_1_ = s_get_machine_failed_00061910[5];
-      local_824._2_1_ = s_get_machine_failed_00061910[6];
-      local_824._3_1_ = s_get_machine_failed_00061910[7];
-      local_820._0_1_ = s_get_machine_failed_00061910[8];
-      local_820._1_1_ = s_get_machine_failed_00061910[9];
-      local_820._2_1_ = s_get_machine_failed_00061910[10];
-      local_820._3_1_ = s_get_machine_failed_00061910[11];
-      local_81c._0_1_ = s_get_machine_failed_00061910[12];
-      local_81c._1_1_ = s_get_machine_failed_00061910[13];
-      local_81c._2_1_ = s_get_machine_failed_00061910[14];
-      local_81c._3_1_ = s_get_machine_failed_00061910[15];
-      local_818._0_1_ = s_get_machine_failed_00061910[16];
-      local_818._1_1_ = s_get_machine_failed_00061910[17];
-      local_818._2_1_ = s_get_machine_failed_00061910[18];
-      local_818._3_1_ = s_get_machine_failed_00061910[19];
-      FUN_0002e584(3,&local_828,0);
-LAB_0001b5fc:
-      if (3 < DAT_0007eb9c) {
-        iVar20 = -1;
-        local_828._0_1_ = s_parse_machine_failed_000619e0[0];
-        local_828._1_1_ = s_parse_machine_failed_000619e0[1];
-        local_828._2_1_ = s_parse_machine_failed_000619e0[2];
-        local_828._3_1_ = s_parse_machine_failed_000619e0[3];
-        local_824._0_1_ = s_parse_machine_failed_000619e0[4];
-        local_824._1_1_ = s_parse_machine_failed_000619e0[5];
-        local_824._2_1_ = s_parse_machine_failed_000619e0[6];
-        local_824._3_1_ = s_parse_machine_failed_000619e0[7];
-        local_820._0_1_ = s_parse_machine_failed_000619e0[8];
-        local_820._1_1_ = s_parse_machine_failed_000619e0[9];
-        local_820._2_1_ = s_parse_machine_failed_000619e0[10];
-        local_820._3_1_ = s_parse_machine_failed_000619e0[11];
-        local_81c._0_1_ = s_parse_machine_failed_000619e0[12];
-        local_81c._1_1_ = s_parse_machine_failed_000619e0[13];
-        local_81c._2_1_ = s_parse_machine_failed_000619e0[14];
-        local_81c._3_1_ = s_parse_machine_failed_000619e0[15];
-        local_818._0_1_ = s_parse_machine_failed_000619e0[16];
-        local_818._1_1_ = s_parse_machine_failed_000619e0[17];
-        local_818._2_1_ = s_parse_machine_failed_000619e0[18];
-        local_818._3_1_ = s_parse_machine_failed_000619e0[19];
-                    /* WARNING: Ignoring partial resolution of indirect */
-        local_814._0_2_ = (short)ram0x000619f4;
-        FUN_0002e584(3,&local_828,0);
-        goto LAB_0001b540;
-      }
-    }
-  }
-  else {
-    if (3 < DAT_0007eb9c) {
-      uVar10 = FUN_0004e768();
-      snprintf((char *)&local_828,0x800,"load machine %s conf\n",uVar10);
-      FUN_0002e584(3,&local_828,0);
-    }
-    pcVar6 = (char *)FUN_0004e768(piVar5);
-    sVar7 = strlen(pcVar6);
-    pcVar8 = (char *)calloc(sVar7 + 1,1);
-    DAT_0058dfb8 = pcVar8;
-    if (pcVar8 == (char *)0x0) {
-      if (3 < DAT_0007eb9c) {
-        local_828._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[0];
-        local_828._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[1];
-        local_828._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[2];
-        local_828._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[3];
-        local_824._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[4];
-        local_824._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[5];
-        local_824._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[6];
-        local_824._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[7];
-        local_820._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[8];
-        local_820._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[9];
-        local_820._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[10];
-        local_820._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[11];
-        local_81c._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[12];
-        local_81c._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[13];
-        local_81c._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[14];
-        local_81c._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[15];
-        local_818._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[16];
-        local_818._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[17];
-        local_818._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[18];
-        local_818._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[19];
-        local_814._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[20];
-        local_814._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[21];
-        local_814._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[22];
-        local_814._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[23];
-        local_810._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[24];
-        local_810._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[25];
-        local_810._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[26];
-        local_810._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[27];
-        local_80c._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[28];
-        local_80c._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[29];
-        local_80c._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[30];
-        local_80c._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[31];
-        local_808._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[32];
-        local_808._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[33];
-        local_808._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[34];
-        local_808._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[35];
-        uStack_804._0_1_ = s_get_machine_failed__Cannot_alloc_0006193c[36];
-        uStack_804._1_1_ = s_get_machine_failed__Cannot_alloc_0006193c[37];
-        uStack_804._2_1_ = s_get_machine_failed__Cannot_alloc_0006193c[38];
-        uStack_804._3_1_ = s_get_machine_failed__Cannot_alloc_0006193c[39];
-        uStack_800 = (undefined2)ram0x00061964;
-        local_7fe = (undefined)((uint)ram0x00061964 >> 0x10);
-        FUN_0002e584(3,&local_828,0);
-        goto LAB_0001b5fc;
-      }
-    }
-    else {
-      strcpy(pcVar8,pcVar6);
-      if (3 < DAT_0007eb9c) {
-        snprintf((char *)&local_828,0x800,"machine : %s \n",pcVar8);
-        FUN_0002e584(3,&local_828,0);
-      }
-      piVar5 = (int *)FUN_0004e234(piVar4,"hw_version");
-      if ((piVar5 == (int *)0x0) || (*piVar5 != 2)) {
-        if (3 < DAT_0007eb9c) {
-          pcVar6 = "get hw_version failed\n";
-LAB_0001b6d0:
-          local_828 = *(undefined4 *)pcVar6;
-          local_824 = *(undefined4 *)((int)pcVar6 + 4);
-          local_820 = *(undefined4 *)((int)pcVar6 + 8);
-          local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-          local_818 = *(undefined4 *)((int)pcVar6 + 0x10);
-                    /* WARNING: Ignoring partial resolution of indirect */
-          local_814._0_2_ = (short)*(undefined4 *)((int)pcVar6 + 0x14);
-          FUN_0002e584(3,&local_828,0);
-          goto LAB_0001b5fc;
-        }
-      }
-      else {
-        if (4 < DAT_0007eb9c) {
-          uVar10 = FUN_0004e768();
-          snprintf((char *)&local_828,0x800,"hw_version: %s\n",uVar10);
-          FUN_0002e584(4,&local_828,0);
-        }
-        piVar5 = (int *)FUN_0004e234(piVar4,"sw_version");
-        if ((piVar5 == (int *)0x0) || (*piVar5 != 2)) {
-          if (3 < DAT_0007eb9c) {
-            pcVar6 = "get sw_version failed\n";
-            goto LAB_0001b6d0;
-          }
-        }
-        else {
-          if (4 < DAT_0007eb9c) {
-            FUN_0004e768();
-            snprintf((char *)&local_828,0x800,"sw_version: %s\n");
-            FUN_0002e584(4,&local_828,0);
-          }
-          piVar5 = (int *)FUN_0004e234(piVar4,"processor");
-          if ((piVar5 == (int *)0x0) || (*piVar5 != 0)) {
-            if (3 < DAT_0007eb9c) {
-              local_828._0_1_ = s_get_processor_failed_00061a04[0];
-              local_828._1_1_ = s_get_processor_failed_00061a04[1];
-              local_828._2_1_ = s_get_processor_failed_00061a04[2];
-              local_828._3_1_ = s_get_processor_failed_00061a04[3];
-              local_824._0_1_ = s_get_processor_failed_00061a04[4];
-              local_824._1_1_ = s_get_processor_failed_00061a04[5];
-              local_824._2_1_ = s_get_processor_failed_00061a04[6];
-              local_824._3_1_ = s_get_processor_failed_00061a04[7];
-              local_820._0_1_ = s_get_processor_failed_00061a04[8];
-              local_820._1_1_ = s_get_processor_failed_00061a04[9];
-              local_820._2_1_ = s_get_processor_failed_00061a04[10];
-              local_820._3_1_ = s_get_processor_failed_00061a04[11];
-              local_81c._0_1_ = s_get_processor_failed_00061a04[12];
-              local_81c._1_1_ = s_get_processor_failed_00061a04[13];
-              local_81c._2_1_ = s_get_processor_failed_00061a04[14];
-              local_81c._3_1_ = s_get_processor_failed_00061a04[15];
-              local_818._0_1_ = s_get_processor_failed_00061a04[16];
-              local_818._1_1_ = s_get_processor_failed_00061a04[17];
-              local_818._2_1_ = s_get_processor_failed_00061a04[18];
-              local_818._3_1_ = s_get_processor_failed_00061a04[19];
-              local_814._0_2_ = (short)ram0x00061a18;
-              FUN_0002e584(3,&local_828,0);
-LAB_0001b8fc:
-              if (3 < DAT_0007eb9c) {
-                iVar20 = -1;
-                local_828._0_1_ = s_parse_processor_failed_00061a48[0];
-                local_828._1_1_ = s_parse_processor_failed_00061a48[1];
-                local_828._2_1_ = s_parse_processor_failed_00061a48[2];
-                local_828._3_1_ = s_parse_processor_failed_00061a48[3];
-                local_824._0_1_ = s_parse_processor_failed_00061a48[4];
-                local_824._1_1_ = s_parse_processor_failed_00061a48[5];
-                local_824._2_1_ = s_parse_processor_failed_00061a48[6];
-                local_824._3_1_ = s_parse_processor_failed_00061a48[7];
-                local_820._0_1_ = s_parse_processor_failed_00061a48[8];
-                local_820._1_1_ = s_parse_processor_failed_00061a48[9];
-                local_820._2_1_ = s_parse_processor_failed_00061a48[10];
-                local_820._3_1_ = s_parse_processor_failed_00061a48[11];
-                local_81c._0_1_ = s_parse_processor_failed_00061a48[12];
-                local_81c._1_1_ = s_parse_processor_failed_00061a48[13];
-                local_81c._2_1_ = s_parse_processor_failed_00061a48[14];
-                local_81c._3_1_ = s_parse_processor_failed_00061a48[15];
-                local_818._0_1_ = s_parse_processor_failed_00061a48[16];
-                local_818._1_1_ = s_parse_processor_failed_00061a48[17];
-                local_818._2_1_ = s_parse_processor_failed_00061a48[18];
-                local_818._3_1_ = s_parse_processor_failed_00061a48[19];
-                local_814._0_1_ = s_parse_processor_failed_00061a48[20];
-                local_814._1_1_ = s_parse_processor_failed_00061a48[21];
-                local_814._2_1_ = s_parse_processor_failed_00061a48[22];
-                local_814._3_1_ = s_parse_processor_failed_00061a48[23];
-                FUN_0002e584(3,&local_828,0);
-                goto LAB_0001b540;
-              }
-            }
-          }
-          else {
-            if (4 < DAT_0007eb9c) {
-              local_828._0_1_ = s_processor__00061a1c[0];
-              local_828._1_1_ = s_processor__00061a1c[1];
-              local_828._2_1_ = s_processor__00061a1c[2];
-              local_828._3_1_ = s_processor__00061a1c[3];
-              local_824._0_1_ = s_processor__00061a1c[4];
-              local_824._1_1_ = s_processor__00061a1c[5];
-              local_824._2_1_ = s_processor__00061a1c[6];
-              local_824._3_1_ = s_processor__00061a1c[7];
-              local_820._0_1_ = s_processor__00061a1c[8];
-              local_820._1_1_ = s_processor__00061a1c[9];
-              local_820._2_1_ = s_processor__00061a1c[10];
-              local_820._3_1_ = s_processor__00061a1c[11];
-              FUN_0002e584(4,&local_828,0);
-            }
-            piVar5 = (int *)FUN_0004e234(piVar5,"type");
-            if ((piVar5 == (int *)0x0) || (*piVar5 != 2)) {
-              if (3 < DAT_0007eb9c) {
-                local_828._0_1_ = s_get_type_failed_00061a28[0];
-                local_828._1_1_ = s_get_type_failed_00061a28[1];
-                local_828._2_1_ = s_get_type_failed_00061a28[2];
-                local_828._3_1_ = s_get_type_failed_00061a28[3];
-                local_824._0_1_ = s_get_type_failed_00061a28[4];
-                local_824._1_1_ = s_get_type_failed_00061a28[5];
-                local_824._2_1_ = s_get_type_failed_00061a28[6];
-                local_824._3_1_ = s_get_type_failed_00061a28[7];
-                local_820._0_1_ = s_get_type_failed_00061a28[8];
-                local_820._1_1_ = s_get_type_failed_00061a28[9];
-                local_820._2_1_ = s_get_type_failed_00061a28[10];
-                local_820._3_1_ = s_get_type_failed_00061a28[11];
-                local_81c._0_1_ = s_get_type_failed_00061a28[12];
-                local_81c._1_1_ = s_get_type_failed_00061a28[13];
-                local_81c._2_1_ = s_get_type_failed_00061a28[14];
-                local_81c._3_1_ = s_get_type_failed_00061a28[15];
-                local_818._0_1_ = (char)ram0x00061a38;
-                FUN_0002e584(3,&local_828,0);
-                goto LAB_0001b8fc;
-              }
-            }
-            else {
-              if (4 < DAT_0007eb9c) {
-                FUN_0004e768();
-                snprintf((char *)&local_828,0x800,"type: %s\n");
-                FUN_0002e584(4,&local_828,0);
-              }
-              piVar5 = (int *)FUN_0004e234(piVar4,"power");
-              if ((piVar5 == (int *)0x0) || (*piVar5 != 0)) {
-                if (3 < DAT_0007eb9c) {
-                  local_828._0_1_ = s_get_power_failed_00061a60[0];
-                  local_828._1_1_ = s_get_power_failed_00061a60[1];
-                  local_828._2_1_ = s_get_power_failed_00061a60[2];
-                  local_828._3_1_ = s_get_power_failed_00061a60[3];
-                  local_824._0_1_ = s_get_power_failed_00061a60[4];
-                  local_824._1_1_ = s_get_power_failed_00061a60[5];
-                  local_824._2_1_ = s_get_power_failed_00061a60[6];
-                  local_824._3_1_ = s_get_power_failed_00061a60[7];
-                  local_820._0_1_ = s_get_power_failed_00061a60[8];
-                  local_820._1_1_ = s_get_power_failed_00061a60[9];
-                  local_820._2_1_ = s_get_power_failed_00061a60[10];
-                  local_820._3_1_ = s_get_power_failed_00061a60[11];
-                  local_81c._0_1_ = s_get_power_failed_00061a60[12];
-                  local_81c._1_1_ = s_get_power_failed_00061a60[13];
-                  local_81c._2_1_ = s_get_power_failed_00061a60[14];
-                  local_81c._3_1_ = s_get_power_failed_00061a60[15];
-                  local_818._0_2_ = (short)ram0x00061a70;
-                  FUN_0002e584(3,&local_828,0);
-LAB_0001ba70:
-                  if (3 < DAT_0007eb9c) {
-                    pcVar6 = "parse power failed\n";
-LAB_0001ba88:
-                    local_828 = *(undefined4 *)pcVar6;
-                    local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                    local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                    local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-                    iVar20 = -1;
-                    local_818 = *(undefined4 *)((int)pcVar6 + 0x10);
-                    FUN_0002e584(3,&local_828,0);
-                    goto LAB_0001b540;
-                  }
-                }
-              }
-              else {
-                if (4 < DAT_0007eb9c) {
-                  local_828._0_1_ = s_power__00061a74[0];
-                  local_828._1_1_ = s_power__00061a74[1];
-                  local_828._2_1_ = s_power__00061a74[2];
-                  local_828._3_1_ = s_power__00061a74[3];
-                  local_824._0_1_ = s_power__00061a74[4];
-                  local_824._1_1_ = s_power__00061a74[5];
-                  local_824._2_1_ = s_power__00061a74[6];
-                  local_824._3_1_ = s_power__00061a74[7];
-                  FUN_0002e584(4,&local_828);
-                }
-                piVar9 = (int *)FUN_0004e234(piVar5,"type");
-                if ((piVar9 == (int *)0x0) || (*piVar9 != 2)) {
-                  if (3 < DAT_0007eb9c) {
-                    pcVar6 = "get type failed\n";
-LAB_0001ba4c:
-                    local_828 = *(undefined4 *)pcVar6;
-                    local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                    local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                    local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-                    /* WARNING: Ignoring partial resolution of indirect */
-                    local_818._0_1_ = (char)*(undefined4 *)((int)pcVar6 + 0x10);
-                    FUN_0002e584(3,&local_828,0);
-                    goto LAB_0001ba70;
-                  }
-                }
-                else {
-                  if (4 < DAT_0007eb9c) {
-                    uVar10 = FUN_0004e768();
-                    snprintf((char *)&local_828,0x800,"type: %s\n",uVar10);
-                    FUN_0002e584(4,&local_828,0);
-                  }
-                  piVar9 = (int *)FUN_0004e234(piVar5,"version");
-                  if ((piVar9 == (int *)0x0) || (*piVar9 != 1)) {
-                    if (3 < DAT_0007eb9c) {
-                      local_828._0_1_ = s_get_version_array_failed_00061a7c[0];
-                      local_828._1_1_ = s_get_version_array_failed_00061a7c[1];
-                      local_828._2_1_ = s_get_version_array_failed_00061a7c[2];
-                      local_828._3_1_ = s_get_version_array_failed_00061a7c[3];
-                      local_824._0_1_ = s_get_version_array_failed_00061a7c[4];
-                      local_824._1_1_ = s_get_version_array_failed_00061a7c[5];
-                      local_824._2_1_ = s_get_version_array_failed_00061a7c[6];
-                      local_824._3_1_ = s_get_version_array_failed_00061a7c[7];
-                      local_820._0_1_ = s_get_version_array_failed_00061a7c[8];
-                      local_820._1_1_ = s_get_version_array_failed_00061a7c[9];
-                      local_820._2_1_ = s_get_version_array_failed_00061a7c[10];
-                      local_820._3_1_ = s_get_version_array_failed_00061a7c[11];
-                      local_81c._0_1_ = s_get_version_array_failed_00061a7c[12];
-                      local_81c._1_1_ = s_get_version_array_failed_00061a7c[13];
-                      local_81c._2_1_ = s_get_version_array_failed_00061a7c[14];
-                      local_81c._3_1_ = s_get_version_array_failed_00061a7c[15];
-                      local_818._0_1_ = s_get_version_array_failed_00061a7c[16];
-                      local_818._1_1_ = s_get_version_array_failed_00061a7c[17];
-                      local_818._2_1_ = s_get_version_array_failed_00061a7c[18];
-                      local_818._3_1_ = s_get_version_array_failed_00061a7c[19];
-                      local_814._0_1_ = s_get_version_array_failed_00061a7c[20];
-                      local_814._1_1_ = s_get_version_array_failed_00061a7c[21];
-                      local_814._2_1_ = s_get_version_array_failed_00061a7c[22];
-                      local_814._3_1_ = s_get_version_array_failed_00061a7c[23];
-                      local_810._0_2_ = (short)ram0x00061a94;
-                      FUN_0002e584(3,&local_828,0);
-                      goto LAB_0001ba70;
-                    }
-                  }
-                  else {
-                    sVar7 = FUN_0004e5a0();
-                    DAT_0058e038 = sVar7;
-                    DAT_0058e03c = calloc(sVar7,2);
-                    if (0 < (int)sVar7) {
-                      iVar20 = 0;
-                      do {
-                        FUN_0004e5bc(piVar9,iVar20);
-                        uVar3 = FUN_0004e9c4();
-                        iVar16 = iVar20 * 2;
-                        iVar20 = iVar20 + 1;
-                        *(undefined2 *)((int)DAT_0058e03c + iVar16) = uVar3;
-                        if (4 < DAT_0007eb9c) {
-                          snprintf((char *)&local_828,0x800,"psu version = 0x%x",
-                                   (uint)*(ushort *)((int)DAT_0058e03c + iVar16));
-                          FUN_0002e584(4,&local_828,0);
-                        }
-                      } while (iVar20 < (int)DAT_0058e038);
-                    }
-                    piVar9 = (int *)FUN_0004e234(piVar5,"i2c_addr");
-                    if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                      if (3 < DAT_0007eb9c) {
-                        local_828._0_1_ = s_get_i2c_addr_failed_00061ab8[0];
-                        local_828._1_1_ = s_get_i2c_addr_failed_00061ab8[1];
-                        local_828._2_1_ = s_get_i2c_addr_failed_00061ab8[2];
-                        local_828._3_1_ = s_get_i2c_addr_failed_00061ab8[3];
-                        local_824._0_1_ = s_get_i2c_addr_failed_00061ab8[4];
-                        local_824._1_1_ = s_get_i2c_addr_failed_00061ab8[5];
-                        local_824._2_1_ = s_get_i2c_addr_failed_00061ab8[6];
-                        local_824._3_1_ = s_get_i2c_addr_failed_00061ab8[7];
-                        local_820._0_1_ = s_get_i2c_addr_failed_00061ab8[8];
-                        local_820._1_1_ = s_get_i2c_addr_failed_00061ab8[9];
-                        local_820._2_1_ = s_get_i2c_addr_failed_00061ab8[10];
-                        local_820._3_1_ = s_get_i2c_addr_failed_00061ab8[11];
-                        local_81c._0_1_ = s_get_i2c_addr_failed_00061ab8[12];
-                        local_81c._1_1_ = s_get_i2c_addr_failed_00061ab8[13];
-                        local_81c._2_1_ = s_get_i2c_addr_failed_00061ab8[14];
-                        local_81c._3_1_ = s_get_i2c_addr_failed_00061ab8[15];
-                        local_818._0_1_ = s_get_i2c_addr_failed_00061ab8[16];
-                        local_818._1_1_ = s_get_i2c_addr_failed_00061ab8[17];
-                        local_818._2_1_ = s_get_i2c_addr_failed_00061ab8[18];
-                        local_818._3_1_ = s_get_i2c_addr_failed_00061ab8[19];
-                        local_814._0_1_ = (char)ram0x00061acc;
-                        FUN_0002e584(3,&local_828,0);
-                        goto LAB_0001ba70;
-                      }
-                    }
-                    else {
-                      if (4 < DAT_0007eb9c) {
-                        uVar10 = FUN_0004e9c4();
-                        snprintf((char *)&local_828,0x800,"i2c_addr: %d\n",uVar10);
-                        FUN_0002e584(4,&local_828,0);
-                      }
-                      piVar5 = (int *)FUN_0004e234(piVar5,&DAT_00061ae0);
-                      if ((piVar5 == (int *)0x0) || (*piVar5 != 3)) {
-                        if (3 < DAT_0007eb9c) {
-                          pcVar6 = "get gpio failed\n";
-                          goto LAB_0001ba4c;
-                        }
-                      }
-                      else {
-                        if (4 < DAT_0007eb9c) {
-                          FUN_0004e9c4();
-                          snprintf((char *)&local_828,0x800,"gpio: %d\n");
-                          FUN_0002e584(4,&local_828,0);
-                        }
-                        piVar5 = (int *)FUN_0004e234(piVar4,&DAT_00061b1c);
-                        if ((piVar5 == (int *)0x0) || (*piVar5 != 1)) {
-                          if (3 < DAT_0007eb9c) {
-                            local_828._0_1_ = s_get_fan_failed_00061b20[0];
-                            local_828._1_1_ = s_get_fan_failed_00061b20[1];
-                            local_828._2_1_ = s_get_fan_failed_00061b20[2];
-                            local_828._3_1_ = s_get_fan_failed_00061b20[3];
-                            local_824._0_1_ = s_get_fan_failed_00061b20[4];
-                            local_824._1_1_ = s_get_fan_failed_00061b20[5];
-                            local_824._2_1_ = s_get_fan_failed_00061b20[6];
-                            local_824._3_1_ = s_get_fan_failed_00061b20[7];
-                            local_820._0_1_ = s_get_fan_failed_00061b20[8];
-                            local_820._1_1_ = s_get_fan_failed_00061b20[9];
-                            local_820._2_1_ = s_get_fan_failed_00061b20[10];
-                            local_820._3_1_ = s_get_fan_failed_00061b20[11];
-                            local_81c._0_1_ = s_get_fan_failed_00061b20[12];
-                            local_81c._1_1_ = s_get_fan_failed_00061b20[13];
-                            local_81c._2_1_ = s_get_fan_failed_00061b20[14];
-                            local_81c._3_1_ = s_get_fan_failed_00061b20[15];
-                            FUN_0002e584(3,&local_828,0);
-LAB_0001bdac:
-                            if (3 < DAT_0007eb9c) {
-                              iVar20 = -1;
-                              local_828._0_1_ = s_parse_fan_failed_00061c28[0];
-                              local_828._1_1_ = s_parse_fan_failed_00061c28[1];
-                              local_828._2_1_ = s_parse_fan_failed_00061c28[2];
-                              local_828._3_1_ = s_parse_fan_failed_00061c28[3];
-                              local_824._0_1_ = s_parse_fan_failed_00061c28[4];
-                              local_824._1_1_ = s_parse_fan_failed_00061c28[5];
-                              local_824._2_1_ = s_parse_fan_failed_00061c28[6];
-                              local_824._3_1_ = s_parse_fan_failed_00061c28[7];
-                              local_820._0_1_ = s_parse_fan_failed_00061c28[8];
-                              local_820._1_1_ = s_parse_fan_failed_00061c28[9];
-                              local_820._2_1_ = s_parse_fan_failed_00061c28[10];
-                              local_820._3_1_ = s_parse_fan_failed_00061c28[11];
-                              local_81c._0_1_ = s_parse_fan_failed_00061c28[12];
-                              local_81c._1_1_ = s_parse_fan_failed_00061c28[13];
-                              local_81c._2_1_ = s_parse_fan_failed_00061c28[14];
-                              local_81c._3_1_ = s_parse_fan_failed_00061c28[15];
-                              local_818._0_2_ = (short)ram0x00061c38;
-                              FUN_0002e584(3,&local_828,0);
-                              goto LAB_0001b540;
-                            }
-                          }
-                        }
-                        else {
-                          if (4 < DAT_0007eb9c) {
-                            local_828._0_1_ = (char)DAT_00061b30;
-                            local_828._1_1_ = DAT_00061b30._1_1_;
-                            local_828._2_1_ = DAT_00061b30._2_1_;
-                            local_828._3_1_ = DAT_00061b30._3_1_;
-                            local_824._0_2_ = (short)DAT_00061b34;
-                            FUN_0002e584(4,&local_828,0);
-                          }
-                          pcVar8 = (char *)0x0;
-                          pcVar6 = (char *)0x0;
-                          for (uVar21 = 0; uVar11 = FUN_0004e5a0(piVar5), uVar21 < uVar11;
-                              uVar21 = uVar21 + 1) {
-                            piVar9 = (int *)FUN_0004e5bc(piVar5,uVar21);
-                            if ((piVar9 == (int *)0x0) || (*piVar9 != 0)) {
-                              if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                              pcVar6 = "get array %d failed\n";
-LAB_0001bfdc:
-                              snprintf((char *)&local_828,0x800,pcVar6,uVar21);
-                              FUN_0002e584(3,&local_828,0);
-                              goto LAB_0001bdac;
-                            }
-                            piVar12 = (int *)FUN_0004e234(piVar9,&DAT_00061b50);
-                            if ((piVar12 == (int *)0x0) || (*piVar12 != 3)) {
-                              if (3 < DAT_0007eb9c) {
-                                pcVar6 = "get arrya %d id failed\n";
-                                goto LAB_0001bfdc;
-                              }
-                              goto LAB_0001b53c;
-                            }
-                            if (4 < DAT_0007eb9c) {
-                              uVar10 = FUN_0004e9c4();
-                              snprintf((char *)&local_828,0x800,"id: %d\n",uVar10);
-                              FUN_0002e584(4,&local_828,0);
-                            }
-                            piVar12 = (int *)FUN_0004e234(piVar9,"position");
-                            if ((piVar12 == (int *)0x0) || (*piVar12 != 2)) {
-                              if (3 < DAT_0007eb9c) {
-                                pcVar6 = "get arrya %d position failed\n";
-                                goto LAB_0001bfdc;
-                              }
-                              goto LAB_0001b53c;
-                            }
-                            if (4 < DAT_0007eb9c) {
-                              uVar10 = FUN_0004e768();
-                              snprintf((char *)&local_828,0x800,"position: %s\n",uVar10);
-                              FUN_0002e584(4,&local_828,0);
-                            }
-                            pcVar6 = (char *)FUN_0004e768(piVar12);
-                            piVar9 = (int *)FUN_0004e234(piVar9,"direction");
-                            if ((piVar9 == (int *)0x0) || (*piVar9 != 2)) {
-                              if (3 < DAT_0007eb9c) {
-                                pcVar6 = "get arrya%d direction failed\n";
-                                goto LAB_0001bfdc;
-                              }
-                              goto LAB_0001b53c;
-                            }
-                            if (4 < DAT_0007eb9c) {
-                              uVar10 = FUN_0004e768();
-                              snprintf((char *)&local_828,0x800,"direction: %s\n",uVar10);
-                              FUN_0002e584(4,&local_828,0);
-                            }
-                            pcVar8 = (char *)FUN_0004e768(piVar9);
-                            DAT_0058e004 = DAT_0058e004 + 1;
-                          }
-                          iVar20 = strncmp(pcVar6,"right",5);
-                          if (iVar20 == 0) {
-                            iVar20 = strncmp(pcVar8,"in",2);
-                            if (iVar20 == 0) {
-LAB_0001c3f4:
-                              DAT_0058e000 = 0;
-                            }
-                            else {
-                              iVar20 = strncmp(pcVar6,"left",4);
-                              if (iVar20 == 0) {
-                                iVar20 = strncmp(pcVar8,"out",2);
-                                if (iVar20 != 0) goto LAB_0001c0e4;
-                                goto LAB_0001c3f4;
-                              }
-                              iVar20 = strncmp(pcVar8,"out",2);
-joined_r0x0001c174:
-                              if (iVar20 != 0) goto LAB_0001c0e4;
-                              DAT_0058e000 = 1;
-                            }
-                            piVar5 = (int *)FUN_0004e234(piVar4,&DAT_00061c3c);
-                            if ((piVar5 == (int *)0x0) || (*piVar5 != 0)) {
-                              if (3 < DAT_0007eb9c) {
-                                local_828._0_1_ = s_get_asic_failed_00061c44[0];
-                                local_828._1_1_ = s_get_asic_failed_00061c44[1];
-                                local_828._2_1_ = s_get_asic_failed_00061c44[2];
-                                local_828._3_1_ = s_get_asic_failed_00061c44[3];
-                                local_824._0_1_ = s_get_asic_failed_00061c44[4];
-                                local_824._1_1_ = s_get_asic_failed_00061c44[5];
-                                local_824._2_1_ = s_get_asic_failed_00061c44[6];
-                                local_824._3_1_ = s_get_asic_failed_00061c44[7];
-                                local_820._0_1_ = s_get_asic_failed_00061c44[8];
-                                local_820._1_1_ = s_get_asic_failed_00061c44[9];
-                                local_820._2_1_ = s_get_asic_failed_00061c44[10];
-                                local_820._3_1_ = s_get_asic_failed_00061c44[11];
-                                local_81c._0_1_ = s_get_asic_failed_00061c44[12];
-                                local_81c._1_1_ = s_get_asic_failed_00061c44[13];
-                                local_81c._2_1_ = s_get_asic_failed_00061c44[14];
-                                local_81c._3_1_ = s_get_asic_failed_00061c44[15];
-                                local_818._0_1_ = (char)ram0x00061c54;
-                                FUN_0002e584(3,&local_828,0);
-LAB_0001c214:
-                                if (3 < DAT_0007eb9c) {
-                                  iVar20 = -1;
-                                  local_828._0_1_ = s_parse_asic_failed_00061e68[0];
-                                  local_828._1_1_ = s_parse_asic_failed_00061e68[1];
-                                  local_828._2_1_ = s_parse_asic_failed_00061e68[2];
-                                  local_828._3_1_ = s_parse_asic_failed_00061e68[3];
-                                  local_824._0_1_ = s_parse_asic_failed_00061e68[4];
-                                  local_824._1_1_ = s_parse_asic_failed_00061e68[5];
-                                  local_824._2_1_ = s_parse_asic_failed_00061e68[6];
-                                  local_824._3_1_ = s_parse_asic_failed_00061e68[7];
-                                  local_820._0_1_ = s_parse_asic_failed_00061e68[8];
-                                  local_820._1_1_ = s_parse_asic_failed_00061e68[9];
-                                  local_820._2_1_ = s_parse_asic_failed_00061e68[10];
-                                  local_820._3_1_ = s_parse_asic_failed_00061e68[11];
-                                  local_81c._0_1_ = s_parse_asic_failed_00061e68[12];
-                                  local_81c._1_1_ = s_parse_asic_failed_00061e68[13];
-                                  local_81c._2_1_ = s_parse_asic_failed_00061e68[14];
-                                  local_81c._3_1_ = s_parse_asic_failed_00061e68[15];
-                                  local_818._0_3_ = (undefined3)ram0x00061e78;
-                                  FUN_0002e584(3,&local_828,0);
-                                  goto LAB_0001b540;
-                                }
-                              }
-                            }
-                            else {
-                              if (4 < DAT_0007eb9c) {
-                                local_828._0_1_ = (char)DAT_00061c58;
-                                local_828._1_1_ = DAT_00061c58._1_1_;
-                                local_828._2_1_ = DAT_00061c58._2_1_;
-                                local_828._3_1_ = DAT_00061c58._3_1_;
-                                local_824._0_3_ = (undefined3)DAT_00061c5c;
-                                FUN_0002e584(4,&local_828);
-                              }
-                              piVar9 = (int *)FUN_0004e234(piVar5,"asic_id");
-                              if ((piVar9 == (int *)0x0) || (*piVar9 != 2)) {
-                                if (3 < DAT_0007eb9c) {
-                                  local_828._0_1_ = s_get_asic_id_failed_00061c68[0];
-                                  local_828._1_1_ = s_get_asic_id_failed_00061c68[1];
-                                  local_828._2_1_ = s_get_asic_id_failed_00061c68[2];
-                                  local_828._3_1_ = s_get_asic_id_failed_00061c68[3];
-                                  local_824._0_1_ = s_get_asic_id_failed_00061c68[4];
-                                  local_824._1_1_ = s_get_asic_id_failed_00061c68[5];
-                                  local_824._2_1_ = s_get_asic_id_failed_00061c68[6];
-                                  local_824._3_1_ = s_get_asic_id_failed_00061c68[7];
-                                  local_820._0_1_ = s_get_asic_id_failed_00061c68[8];
-                                  local_820._1_1_ = s_get_asic_id_failed_00061c68[9];
-                                  local_820._2_1_ = s_get_asic_id_failed_00061c68[10];
-                                  local_820._3_1_ = s_get_asic_id_failed_00061c68[11];
-                                  local_81c._0_1_ = s_get_asic_id_failed_00061c68[12];
-                                  local_81c._1_1_ = s_get_asic_id_failed_00061c68[13];
-                                  local_81c._2_1_ = s_get_asic_id_failed_00061c68[14];
-                                  local_81c._3_1_ = s_get_asic_id_failed_00061c68[15];
-                                  local_818._0_1_ = s_get_asic_id_failed_00061c68[16];
-                                  local_818._1_1_ = s_get_asic_id_failed_00061c68[17];
-                                  local_818._2_1_ = s_get_asic_id_failed_00061c68[18];
-                                  local_818._3_1_ = s_get_asic_id_failed_00061c68[19];
-                                  FUN_0002e584(3,&local_828,0);
-                                  goto LAB_0001c214;
-                                }
-                              }
-                              else {
-                                if (4 < DAT_0007eb9c) {
-                                  uVar10 = FUN_0004e768();
-                                  snprintf((char *)&local_828,0x800,"asic_id: %s\n",uVar10);
-                                  FUN_0002e584(4,&local_828,0);
-                                }
-                                piVar9 = (int *)FUN_0004e234(piVar5,"asic_addr");
-                                if ((piVar9 == (int *)0x0) || (*piVar9 != 2)) {
-                                  if (3 < DAT_0007eb9c) {
-                                    local_828._0_1_ = s_get_asic_addr_failed_00061c98[0];
-                                    local_828._1_1_ = s_get_asic_addr_failed_00061c98[1];
-                                    local_828._2_1_ = s_get_asic_addr_failed_00061c98[2];
-                                    local_828._3_1_ = s_get_asic_addr_failed_00061c98[3];
-                                    local_824._0_1_ = s_get_asic_addr_failed_00061c98[4];
-                                    local_824._1_1_ = s_get_asic_addr_failed_00061c98[5];
-                                    local_824._2_1_ = s_get_asic_addr_failed_00061c98[6];
-                                    local_824._3_1_ = s_get_asic_addr_failed_00061c98[7];
-                                    local_820._0_1_ = s_get_asic_addr_failed_00061c98[8];
-                                    local_820._1_1_ = s_get_asic_addr_failed_00061c98[9];
-                                    local_820._2_1_ = s_get_asic_addr_failed_00061c98[10];
-                                    local_820._3_1_ = s_get_asic_addr_failed_00061c98[11];
-                                    local_81c._0_1_ = s_get_asic_addr_failed_00061c98[12];
-                                    local_81c._1_1_ = s_get_asic_addr_failed_00061c98[13];
-                                    local_81c._2_1_ = s_get_asic_addr_failed_00061c98[14];
-                                    local_81c._3_1_ = s_get_asic_addr_failed_00061c98[15];
-                                    local_818._0_1_ = s_get_asic_addr_failed_00061c98[16];
-                                    local_818._1_1_ = s_get_asic_addr_failed_00061c98[17];
-                                    local_818._2_1_ = s_get_asic_addr_failed_00061c98[18];
-                                    local_818._3_1_ = s_get_asic_addr_failed_00061c98[19];
-                                    local_814._0_2_ = (short)ram0x00061cac;
-                                    FUN_0002e584(3,&local_828,0);
-                                    goto LAB_0001c214;
-                                  }
-                                }
-                                else {
-                                  if (4 < DAT_0007eb9c) {
-                                    uVar10 = FUN_0004e768();
-                                    snprintf((char *)&local_828,0x800,"asic_addr : %s\n",uVar10);
-                                    FUN_0002e584(4,&local_828,0);
-                                  }
-                                  pcVar6 = (char *)FUN_0004e768(piVar9);
-                                  DAT_0058dfd8 = strtol(pcVar6,(char **)0x0,0);
-                                  if (DAT_0058dfd8 == 0) {
-                                    if (3 < DAT_0007eb9c) {
-                                      pcVar6 = "convert asic_addr failed\n";
-LAB_0001c3ac:
-                                      local_828 = *(undefined4 *)pcVar6;
-                                      local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                                      local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                                      local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-                                      local_818 = *(undefined4 *)((int)pcVar6 + 0x10);
-                                      local_814 = *(undefined4 *)((int)pcVar6 + 0x14);
-                                      local_810._0_2_ = (short)*(undefined4 *)((int)pcVar6 + 0x18);
-                                      FUN_0002e584(3,&local_828,0);
-                                      goto LAB_0001c214;
-                                    }
-                                  }
-                                  else {
-                                    if (4 < DAT_0007eb9c) {
-                                      snprintf((char *)&local_828,0x800,"asic_addr 0x%x\n",
-                                               DAT_0058dfd8);
-                                      FUN_0002e584(4,&local_828,0);
-                                    }
-                                    piVar9 = (int *)FUN_0004e234(piVar5,"asic_core_num");
-                                    if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                      if (3 < DAT_0007eb9c) {
-                                        pcVar6 = "get asic_core_num failed\n";
-                                        goto LAB_0001c3ac;
-                                      }
-                                    }
-                                    else {
-                                      if (4 < DAT_0007eb9c) {
-                                        uVar10 = FUN_0004e9c4();
-                                        snprintf((char *)&local_828,0x800,"asic_core_num: %d\n",
-                                                 uVar10);
-                                        FUN_0002e584(4,&local_828,0);
-                                      }
-                                      DAT_0058dfdc = FUN_0004e9c4(piVar9);
-                                      piVar9 = (int *)FUN_0004e234(piVar5,"asic_small_core_num");
-                                      if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                        if (3 < DAT_0007eb9c) {
-                                          pcVar6 = "get asic_small_core_num failed\n";
-LAB_0001c524:
-                                          local_828 = *(undefined4 *)pcVar6;
-                                          local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                                          local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                                          local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-                                          local_818 = *(undefined4 *)((int)pcVar6 + 0x10);
-                                          local_814 = *(undefined4 *)((int)pcVar6 + 0x14);
-                                          local_810 = *(undefined4 *)((int)pcVar6 + 0x18);
-                                          local_80c = *(undefined4 *)((int)pcVar6 + 0x1c);
-                                          FUN_0002e584(3,&local_828,0);
-                                          goto LAB_0001c214;
-                                        }
-                                      }
-                                      else {
-                                        if (4 < DAT_0007eb9c) {
-                                          uVar10 = FUN_0004e9c4();
-                                          snprintf((char *)&local_828,0x800,
-                                                   "asic_small_core_num: %d\n",uVar10);
-                                          FUN_0002e584(4,&local_828,0);
-                                        }
-                                        DAT_0058dfe0 = FUN_0004e9c4(piVar9);
-                                        piVar9 = (int *)FUN_0004e234(piVar5,"core_small_core_num");
-                                        if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                          if (3 < DAT_0007eb9c) {
-                                            pcVar6 = "get core_small_core_num failed\n";
-                                            goto LAB_0001c524;
-                                          }
-                                        }
-                                        else {
-                                          if (4 < DAT_0007eb9c) {
-                                            uVar10 = FUN_0004e9c4();
-                                            snprintf((char *)&local_828,0x800,
-                                                     "core_small_core_num: %d\n",uVar10);
-                                            FUN_0002e584(4,&local_828,0);
-                                          }
-                                          DAT_0058dfe4 = FUN_0004e9c4(piVar9);
-                                          piVar9 = (int *)FUN_0004e234(piVar5,"asic_domain_num");
-                                          if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                            if (3 < DAT_0007eb9c) {
-                                              local_828._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[0];
-                                              local_828._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[1];
-                                              local_828._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[2];
-                                              local_828._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[3];
-                                              local_824._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[4];
-                                              local_824._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[5];
-                                              local_824._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[6];
-                                              local_824._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[7];
-                                              local_820._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[8];
-                                              local_820._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[9];
-                                              local_820._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[10];
-                                              local_820._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[11];
-                                              local_81c._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[12];
-                                              local_81c._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[13];
-                                              local_81c._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[14];
-                                              local_81c._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[15];
-                                              local_818._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[16];
-                                              local_818._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[17];
-                                              local_818._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[18];
-                                              local_818._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[19];
-                                              local_814._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[20];
-                                              local_814._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[21];
-                                              local_814._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[22];
-                                              local_814._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[23];
-                                              local_810._0_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[24];
-                                              local_810._1_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[25];
-                                              local_810._2_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[26];
-                                              local_810._3_1_ =
-                                                   s_get_asic_domain_num_failed_00061ddc[27];
-                                              FUN_0002e584(3,&local_828,0);
-                                              goto LAB_0001c214;
-                                            }
-                                          }
-                                          else {
-                                            if (4 < DAT_0007eb9c) {
-                                              uVar10 = FUN_0004e9c4();
-                                              snprintf((char *)&local_828,0x800,
-                                                       "asic_domain_num : %d\n",uVar10);
-                                              FUN_0002e584(4,&local_828,0);
-                                            }
-                                            DAT_0058dfe8 = FUN_0004e9c4(piVar9);
-                                            piVar5 = (int *)FUN_0004e234(piVar5,"asic_addr_interval"
-                                                                        );
-                                            if ((piVar5 == (int *)0x0) || (*piVar5 != 3)) {
-                                              if (3 < DAT_0007eb9c) {
-                                                local_828._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[0];
-                                                local_828._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[1];
-                                                local_828._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[2];
-                                                local_828._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[3];
-                                                local_824._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[4];
-                                                local_824._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[5];
-                                                local_824._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[6];
-                                                local_824._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[7];
-                                                local_820._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[8];
-                                                local_820._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[9];
-                                                local_820._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[10];
-                                                local_820._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[11];
-                                                local_81c._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[12];
-                                                local_81c._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[13];
-                                                local_81c._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[14];
-                                                local_81c._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[15];
-                                                local_818._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[16];
-                                                local_818._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[17];
-                                                local_818._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[18];
-                                                local_818._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[19];
-                                                local_814._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[20];
-                                                local_814._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[21];
-                                                local_814._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[22];
-                                                local_814._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[23];
-                                                local_810._0_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[24];
-                                                local_810._1_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[25];
-                                                local_810._2_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[26];
-                                                local_810._3_1_ =
-                                                     s_get_asic_addr_interval_failed_00061e24[27];
-                                                local_80c._0_3_ = (undefined3)ram0x00061e40;
-                                                FUN_0002e584(3,&local_828,0);
-                                                goto LAB_0001c214;
-                                              }
-                                            }
-                                            else {
-                                              if (4 < DAT_0007eb9c) {
-                                                uVar10 = FUN_0004e9c4();
-                                                snprintf((char *)&local_828,0x800,
-                                                         "asic_addr_interval : %d\n",uVar10);
-                                                FUN_0002e584(4,&local_828,0);
-                                              }
-                                              DAT_0058dfec = FUN_0004e9c4(piVar5);
-                                              piVar5 = (int *)FUN_0004e234(piVar4,"chain");
-                                              if ((piVar5 == (int *)0x0) || (*piVar5 != 0)) {
-                                                if (3 < DAT_0007eb9c) {
-                                                  local_828._0_1_ = s_get_chain_failed_00061e7c[0];
-                                                  local_828._1_1_ = s_get_chain_failed_00061e7c[1];
-                                                  local_828._2_1_ = s_get_chain_failed_00061e7c[2];
-                                                  local_828._3_1_ = s_get_chain_failed_00061e7c[3];
-                                                  local_824._0_1_ = s_get_chain_failed_00061e7c[4];
-                                                  local_824._1_1_ = s_get_chain_failed_00061e7c[5];
-                                                  local_824._2_1_ = s_get_chain_failed_00061e7c[6];
-                                                  local_824._3_1_ = s_get_chain_failed_00061e7c[7];
-                                                  local_820._0_1_ = s_get_chain_failed_00061e7c[8];
-                                                  local_820._1_1_ = s_get_chain_failed_00061e7c[9];
-                                                  local_820._2_1_ = s_get_chain_failed_00061e7c[10];
-                                                  local_820._3_1_ = s_get_chain_failed_00061e7c[11];
-                                                  local_81c._0_1_ = s_get_chain_failed_00061e7c[12];
-                                                  local_81c._1_1_ = s_get_chain_failed_00061e7c[13];
-                                                  local_81c._2_1_ = s_get_chain_failed_00061e7c[14];
-                                                  local_81c._3_1_ = s_get_chain_failed_00061e7c[15];
-                                                  local_818._0_2_ = (short)ram0x00061e8c;
-                                                  FUN_0002e584(3,&local_828,0);
-                                                  goto LAB_0001c828;
-                                                }
-                                              }
-                                              else {
-                                                if (4 < DAT_0007eb9c) {
-                                                  local_828._0_1_ = s_chain__00061e90[0];
-                                                  local_828._1_1_ = s_chain__00061e90[1];
-                                                  local_828._2_1_ = s_chain__00061e90[2];
-                                                  local_828._3_1_ = s_chain__00061e90[3];
-                                                  local_824._0_1_ = s_chain__00061e90[4];
-                                                  local_824._1_1_ = s_chain__00061e90[5];
-                                                  local_824._2_1_ = s_chain__00061e90[6];
-                                                  local_824._3_1_ = s_chain__00061e90[7];
-                                                  FUN_0002e584(4,&local_828);
-                                                }
-                                                piVar9 = (int *)FUN_0004e234(piVar5,"chain_num");
-                                                if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                  if (3 < DAT_0007eb9c) {
-                                                    pcVar6 = "get chain_num failed\n";
-LAB_0001c800:
-                                                    local_828 = *(undefined4 *)pcVar6;
-                                                    local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                                                    local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                                                    local_81c = *(undefined4 *)((int)pcVar6 + 0xc);
-                                                    local_818 = *(undefined4 *)((int)pcVar6 + 0x10);
-                                                    local_814._0_2_ =
-                                                         (short)*(undefined4 *)((int)pcVar6 + 0x14);
-                                                    FUN_0002e584(3,&local_828,0);
-LAB_0001c828:
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "parse chain failed\n";
-                                                      goto LAB_0001ba88;
-                                                    }
-                                                  }
-                                                }
-                                                else {
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,
-                                                             "chain_num : %d\n",uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  DAT_0058dfbc = FUN_0004e9c4(piVar9);
-                                                  piVar9 = (int *)FUN_0004e234(piVar5,"chain_row");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get chain_row failed\n";
-                                                      goto LAB_0001c800;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "chain_row: %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    DAT_0058dfc0 = FUN_0004e9c4(piVar9);
-                                                    piVar9 = (int *)FUN_0004e234(piVar5,
-                                                  "chain_column");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[0];
-                                                      local_828._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[1];
-                                                      local_828._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[2];
-                                                      local_828._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[3];
-                                                      local_824._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[4];
-                                                      local_824._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[5];
-                                                      local_824._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[6];
-                                                      local_824._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[7];
-                                                      local_820._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[8];
-                                                      local_820._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[9];
-                                                      local_820._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[10];
-                                                      local_820._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[11];
-                                                      local_81c._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[12];
-                                                      local_81c._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[13];
-                                                      local_81c._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[14];
-                                                      local_81c._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[15];
-                                                      local_818._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[16];
-                                                      local_818._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[17];
-                                                      local_818._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[18];
-                                                      local_818._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[19];
-                                                      local_814._0_1_ =
-                                                           s_get_chain_column_failed_00061f04[20];
-                                                      local_814._1_1_ =
-                                                           s_get_chain_column_failed_00061f04[21];
-                                                      local_814._2_1_ =
-                                                           s_get_chain_column_failed_00061f04[22];
-                                                      local_814._3_1_ =
-                                                           s_get_chain_column_failed_00061f04[23];
-                                                      local_810._0_1_ = (char)ram0x00061f1c;
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001c828;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "chain_column: %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    DAT_0058dfc4 = FUN_0004e9c4(piVar9);
-                                                    piVar9 = (int *)FUN_0004e234(piVar5,
-                                                  "chain_domain_num");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[0]
-                                                      ;
-                                                      local_828._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[1]
-                                                      ;
-                                                      local_828._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[2]
-                                                      ;
-                                                      local_828._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[3]
-                                                      ;
-                                                      local_824._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[4]
-                                                      ;
-                                                      local_824._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[5]
-                                                      ;
-                                                      local_824._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[6]
-                                                      ;
-                                                      local_824._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[7]
-                                                      ;
-                                                      local_820._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[8]
-                                                      ;
-                                                      local_820._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48[9]
-                                                      ;
-                                                      local_820._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [10];
-                                                      local_820._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [11];
-                                                      local_81c._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [12];
-                                                      local_81c._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [13];
-                                                      local_81c._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [14];
-                                                      local_81c._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [15];
-                                                      local_818._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [16];
-                                                      local_818._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [17];
-                                                      local_818._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [18];
-                                                      local_818._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [19];
-                                                      local_814._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [20];
-                                                      local_814._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [21];
-                                                      local_814._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [22];
-                                                      local_814._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [23];
-                                                      local_810._0_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [24];
-                                                      local_810._1_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [25];
-                                                      local_810._2_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [26];
-                                                      local_810._3_1_ =
-                                                           s_get_chain_domain_num_failed_00061f48
-                                                           [27];
-                                                      local_80c._0_1_ = (char)ram0x00061f64;
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001c828;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "chain_domain_num : %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    DAT_0058dfc8 = FUN_0004e9c4(piVar9);
-                                                    piVar9 = (int *)FUN_0004e234(piVar5,
-                                                  "chain_asic_num");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get chain_asic_num failed\n";
-LAB_0001caec:
-                                                      local_828 = *(undefined4 *)pcVar6;
-                                                      local_824 = *(undefined4 *)((int)pcVar6 + 4);
-                                                      local_820 = *(undefined4 *)((int)pcVar6 + 8);
-                                                      local_81c = *(undefined4 *)((int)pcVar6 + 0xc)
-                                                      ;
-                                                      local_818 = *(undefined4 *)
-                                                                   ((int)pcVar6 + 0x10);
-                                                      local_814 = *(undefined4 *)
-                                                                   ((int)pcVar6 + 0x14);
-                                                      local_810._0_3_ =
-                                                           (undefined3)
-                                                           *(undefined4 *)((int)pcVar6 + 0x18);
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001c828;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "chain_asic_num : %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    DAT_0058dfcc = FUN_0004e9c4(piVar9);
-                                                    piVar9 = (int *)FUN_0004e234(piVar5,
-                                                  "domain_asic_num");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[0];
-                                                      local_828._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[1];
-                                                      local_828._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[2];
-                                                      local_828._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[3];
-                                                      local_824._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[4];
-                                                      local_824._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[5];
-                                                      local_824._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[6];
-                                                      local_824._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[7];
-                                                      local_820._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[8];
-                                                      local_820._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[9];
-                                                      local_820._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[10]
-                                                      ;
-                                                      local_820._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[11]
-                                                      ;
-                                                      local_81c._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[12]
-                                                      ;
-                                                      local_81c._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[13]
-                                                      ;
-                                                      local_81c._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[14]
-                                                      ;
-                                                      local_81c._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[15]
-                                                      ;
-                                                      local_818._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[16]
-                                                      ;
-                                                      local_818._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[17]
-                                                      ;
-                                                      local_818._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[18]
-                                                      ;
-                                                      local_818._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[19]
-                                                      ;
-                                                      local_814._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[20]
-                                                      ;
-                                                      local_814._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[21]
-                                                      ;
-                                                      local_814._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[22]
-                                                      ;
-                                                      local_814._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[23]
-                                                      ;
-                                                      local_810._0_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[24]
-                                                      ;
-                                                      local_810._1_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[25]
-                                                      ;
-                                                      local_810._2_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[26]
-                                                      ;
-                                                      local_810._3_1_ =
-                                                           s_get_domain_asic_num_failed_00061fd4[27]
-                                                      ;
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001c828;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "domain_asic_num : %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    iVar20 = FUN_0004e9c4(piVar9);
-                                                    __nmemb_00 = DAT_0058dfcc;
-                                                    __nmemb = DAT_0058dfc8;
-                                                    sVar7 = DAT_0058dfbc;
-                                                    DAT_0058dfd0 = iVar20;
-                                                    if (3 < DAT_0007eb9c) {
-                                                      snprintf((char *)&local_828,0x800,
-                                                                                                                              
-                                                  "chain_num %d, chain_domain_num %d, chain_asic_num %d, domain_asic_num %d\n"
-                                                  ,DAT_0058dfbc,DAT_0058dfc8,DAT_0058dfcc,iVar20);
-                                                  FUN_0002e584(3,&local_828,0);
-                                                  }
-                                                  DAT_0058dff0 = calloc(sVar7,0x14);
-                                                  if (DAT_0058dff0 == (void *)0x0) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "malloc %d chain_t failed\n";
-LAB_0001cd40:
-                                                      snprintf((char *)&local_828,0x800,pcVar6,sVar7
-                                                              );
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ =
-                                                             s_alloc_topol_failed_000620a8[0];
-                                                        local_828._1_1_ =
-                                                             s_alloc_topol_failed_000620a8[1];
-                                                        local_828._2_1_ =
-                                                             s_alloc_topol_failed_000620a8[2];
-                                                        local_828._3_1_ =
-                                                             s_alloc_topol_failed_000620a8[3];
-                                                        local_824._0_1_ =
-                                                             s_alloc_topol_failed_000620a8[4];
-                                                        local_824._1_1_ =
-                                                             s_alloc_topol_failed_000620a8[5];
-                                                        local_824._2_1_ =
-                                                             s_alloc_topol_failed_000620a8[6];
-                                                        local_824._3_1_ =
-                                                             s_alloc_topol_failed_000620a8[7];
-                                                        local_820._0_1_ =
-                                                             s_alloc_topol_failed_000620a8[8];
-                                                        local_820._1_1_ =
-                                                             s_alloc_topol_failed_000620a8[9];
-                                                        local_820._2_1_ =
-                                                             s_alloc_topol_failed_000620a8[10];
-                                                        local_820._3_1_ =
-                                                             s_alloc_topol_failed_000620a8[11];
-                                                        local_81c._0_1_ =
-                                                             s_alloc_topol_failed_000620a8[12];
-                                                        local_81c._1_1_ =
-                                                             s_alloc_topol_failed_000620a8[13];
-                                                        local_81c._2_1_ =
-                                                             s_alloc_topol_failed_000620a8[14];
-                                                        local_81c._3_1_ =
-                                                             s_alloc_topol_failed_000620a8[15];
-                                                        local_818._0_1_ =
-                                                             s_alloc_topol_failed_000620a8[16];
-                                                        local_818._1_1_ =
-                                                             s_alloc_topol_failed_000620a8[17];
-                                                        local_818._2_1_ =
-                                                             s_alloc_topol_failed_000620a8[18];
-                                                        local_818._3_1_ =
-                                                             s_alloc_topol_failed_000620a8[19];
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001c828;
-                                                      }
-                                                    }
-                                                  }
-                                                  else {
-                                                    for (iVar20 = 0; pvVar22 = DAT_0058dff0,
-                                                        iVar20 < (int)sVar7; iVar20 = iVar20 + 1) {
-                                                      iVar16 = iVar20 * 0x14;
-                                                      *(int *)((int)DAT_0058dff0 + iVar16) = iVar20;
-                                                      pvVar13 = calloc(__nmemb,8);
-                                                      *(void **)((int)pvVar22 + iVar16 + 0xc) =
-                                                           pvVar13;
-                                                      if (pvVar13 == (void *)0x0) {
-                                                        if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                        pcVar6 = "malloc %d domain_t failed\n";
-                                                        sVar7 = __nmemb;
-                                                        goto LAB_0001cd40;
-                                                      }
-                                                      pvVar13 = calloc(__nmemb_00,0x1c);
-                                                      *(void **)((int)pvVar22 + iVar16 + 8) =
-                                                           pvVar13;
-                                                      if (pvVar13 == (void *)0x0) {
-                                                        if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                        pcVar6 = "malloc %d asic_t failed\n";
-                                                        sVar7 = __nmemb_00;
-                                                        goto LAB_0001cd40;
-                                                      }
-                                                      iVar14 = 0;
-                                                      iVar19 = 0;
-                                                      while( true ) {
-                                                        iVar14 = iVar14 + iVar20 * 0x1c;
-                                                        if ((int)__nmemb <= iVar19) break;
-                                                        iVar17 = *(int *)((int)pvVar22 +
-                                                                         iVar16 + 0xc);
-                                                        *(int *)(iVar17 + iVar19 * 8) = iVar19;
-                                                        iVar1 = iVar19 * 8;
-                                                        iVar19 = iVar19 + 1;
-                                                        *(int *)(iVar17 + iVar1 + 4) =
-                                                             *(int *)((int)pvVar22 + iVar16 + 8) +
-                                                             iVar14 + iVar20 * -0x1c;
-                                                      }
-                                                    }
-                                                    piVar9 = (int *)FUN_0004e234(piVar5,&
-                                                  DAT_000609f8);
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 0)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ = s_get_pic_failed_000620bc[0]
-                                                      ;
-                                                      local_828._1_1_ = s_get_pic_failed_000620bc[1]
-                                                      ;
-                                                      local_828._2_1_ = s_get_pic_failed_000620bc[2]
-                                                      ;
-                                                      local_828._3_1_ = s_get_pic_failed_000620bc[3]
-                                                      ;
-                                                      local_824._0_1_ = s_get_pic_failed_000620bc[4]
-                                                      ;
-                                                      local_824._1_1_ = s_get_pic_failed_000620bc[5]
-                                                      ;
-                                                      local_824._2_1_ = s_get_pic_failed_000620bc[6]
-                                                      ;
-                                                      local_824._3_1_ = s_get_pic_failed_000620bc[7]
-                                                      ;
-                                                      local_820._0_1_ = s_get_pic_failed_000620bc[8]
-                                                      ;
-                                                      local_820._1_1_ = s_get_pic_failed_000620bc[9]
-                                                      ;
-                                                      local_820._2_1_ =
-                                                           s_get_pic_failed_000620bc[10];
-                                                      local_820._3_1_ =
-                                                           s_get_pic_failed_000620bc[11];
-                                                      local_81c._0_1_ =
-                                                           s_get_pic_failed_000620bc[12];
-                                                      local_81c._1_1_ =
-                                                           s_get_pic_failed_000620bc[13];
-                                                      local_81c._2_1_ =
-                                                           s_get_pic_failed_000620bc[14];
-                                                      local_81c._3_1_ =
-                                                           s_get_pic_failed_000620bc[15];
-                                                      FUN_0002e584(3,&local_828,0);
-LAB_0001ce48:
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[0];
-                                                        local_828._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[1];
-                                                        local_828._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[2];
-                                                        local_828._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[3];
-                                                        local_824._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[4];
-                                                        local_824._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[5];
-                                                        local_824._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[6];
-                                                        local_824._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[7];
-                                                        local_820._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[8];
-                                                        local_820._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[9];
-                                                        local_820._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[10];
-                                                        local_820._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[11];
-                                                        local_81c._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[12];
-                                                        local_81c._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[13];
-                                                        local_81c._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[14];
-                                                        local_81c._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[15];
-                                                        local_818._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[16];
-                                                        local_818._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[17];
-                                                        local_818._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[18];
-                                                        local_818._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[19];
-                                                        local_814._0_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[20];
-                                                        local_814._1_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[21];
-                                                        local_814._2_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[22];
-                                                        local_814._3_1_ =
-                                                             s_parse_chain_pic_failed_000621b4[23];
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001c828;
-                                                      }
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      local_828._0_1_ = (char)DAT_000620cc;
-                                                      local_828._1_1_ = DAT_000620cc._1_1_;
-                                                      local_828._2_1_ = DAT_000620cc._2_1_;
-                                                      local_828._3_1_ = DAT_000620cc._3_1_;
-                                                      local_824._0_2_ = (short)DAT_000620d0;
-                                                      FUN_0002e584(4,&local_828);
-                                                    }
-                                                    piVar12 = (int *)FUN_0004e234(piVar9,"type");
-                                                    if ((piVar12 == (int *)0x0) || (*piVar12 != 2))
-                                                    {
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ =
-                                                             s_get_type_failed_00061a28[0];
-                                                        local_828._1_1_ =
-                                                             s_get_type_failed_00061a28[1];
-                                                        local_828._2_1_ =
-                                                             s_get_type_failed_00061a28[2];
-                                                        local_828._3_1_ =
-                                                             s_get_type_failed_00061a28[3];
-                                                        local_824._0_1_ =
-                                                             s_get_type_failed_00061a28[4];
-                                                        local_824._1_1_ =
-                                                             s_get_type_failed_00061a28[5];
-                                                        local_824._2_1_ =
-                                                             s_get_type_failed_00061a28[6];
-                                                        local_824._3_1_ =
-                                                             s_get_type_failed_00061a28[7];
-                                                        local_820._0_1_ =
-                                                             s_get_type_failed_00061a28[8];
-                                                        local_820._1_1_ =
-                                                             s_get_type_failed_00061a28[9];
-                                                        local_820._2_1_ =
-                                                             s_get_type_failed_00061a28[10];
-                                                        local_820._3_1_ =
-                                                             s_get_type_failed_00061a28[11];
-                                                        local_81c._0_1_ =
-                                                             s_get_type_failed_00061a28[12];
-                                                        local_81c._1_1_ =
-                                                             s_get_type_failed_00061a28[13];
-                                                        local_81c._2_1_ =
-                                                             s_get_type_failed_00061a28[14];
-                                                        local_81c._3_1_ =
-                                                             s_get_type_failed_00061a28[15];
-                                                        local_818._0_1_ = (char)ram0x00061a38;
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001ce48;
-                                                      }
-                                                    }
-                                                    else {
-                                                      if (4 < DAT_0007eb9c) {
-                                                        uVar10 = FUN_0004e768();
-                                                        snprintf((char *)&local_828,0x800,
-                                                                 "type: %s\n",uVar10);
-                                                        FUN_0002e584(4,&local_828,0);
-                                                      }
-                                                      piVar12 = (int *)FUN_0004e234(piVar9,
-                                                  "i2c_addr");
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[0];
-                                                      local_828._1_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[1];
-                                                      local_828._2_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[2];
-                                                      local_828._3_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[3];
-                                                      local_824._0_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[4];
-                                                      local_824._1_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[5];
-                                                      local_824._2_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[6];
-                                                      local_824._3_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[7];
-                                                      local_820._0_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[8];
-                                                      local_820._1_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[9];
-                                                      local_820._2_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[10];
-                                                      local_820._3_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[11];
-                                                      local_81c._0_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[12];
-                                                      local_81c._1_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[13];
-                                                      local_81c._2_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[14];
-                                                      local_81c._3_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[15];
-                                                      local_818._0_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[16];
-                                                      local_818._1_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[17];
-                                                      local_818._2_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[18];
-                                                      local_818._3_1_ =
-                                                           s_get_i2c_addr_failed_00061ab8[19];
-                                                      local_814._0_1_ = (char)ram0x00061acc;
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001ce48;
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "i2c_addr: %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    piVar9 = (int *)FUN_0004e234(piVar9,"sensor");
-                                                    pcVar6 = DAT_0058dfb8;
-                                                    if ((piVar9 == (int *)0x0) || (*piVar9 != 1)) {
-                                                      iVar20 = strcmp(DAT_0058dfb8,"BHB28601");
-                                                      if ((iVar20 == 0) ||
-                                                         (iVar20 = strcmp(pcVar6,"BHB28501"),
-                                                         iVar20 == 0)) goto LAB_0001d42c;
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[0];
-                                                        local_828._1_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[1];
-                                                        local_828._2_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[2];
-                                                        local_828._3_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[3];
-                                                        local_824._0_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[4];
-                                                        local_824._1_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[5];
-                                                        local_824._2_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[6];
-                                                        local_824._3_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[7];
-                                                        local_820._0_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[8];
-                                                        local_820._1_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[9];
-                                                        local_820._2_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[10];
-                                                        local_820._3_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[11];
-                                                        local_81c._0_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[12];
-                                                        local_81c._1_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[13];
-                                                        local_81c._2_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[14];
-                                                        local_81c._3_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[15];
-                                                        local_818._0_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[16];
-                                                        local_818._1_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[17];
-                                                        local_818._2_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[18];
-                                                        local_818._3_1_ =
-                                                             s_get_pic_sensor_failed_000620d4[19];
-                                                        local_814._0_3_ = (undefined3)ram0x000620e8;
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001ce48;
-                                                      }
-                                                    }
-                                                    else {
-                                                      if (4 < DAT_0007eb9c) {
-                                                        local_828._0_1_ = s_pic_sensor__000620ec[0];
-                                                        local_828._1_1_ = s_pic_sensor__000620ec[1];
-                                                        local_828._2_1_ = s_pic_sensor__000620ec[2];
-                                                        local_828._3_1_ = s_pic_sensor__000620ec[3];
-                                                        local_824._0_1_ = s_pic_sensor__000620ec[4];
-                                                        local_824._1_1_ = s_pic_sensor__000620ec[5];
-                                                        local_824._2_1_ = s_pic_sensor__000620ec[6];
-                                                        local_824._3_1_ = s_pic_sensor__000620ec[7];
-                                                        local_820._0_1_ = s_pic_sensor__000620ec[8];
-                                                        local_820._1_1_ = s_pic_sensor__000620ec[9];
-                                                        local_820._2_1_ = s_pic_sensor__000620ec[10]
-                                                        ;
-                                                        local_820._3_1_ = s_pic_sensor__000620ec[11]
-                                                        ;
-                                                        local_81c._0_1_ = (char)ram0x000620f8;
-                                                        FUN_0002e584(4,&local_828,0);
-                                                      }
-                                                      DAT_0058dff8 = FUN_0004e5a0(piVar9);
-                                                      sVar7 = FUN_0004e5a0(piVar9);
-                                                      DAT_0058dffc = calloc(sVar7,0xc);
-                                                      if (DAT_0058dffc == (void *)0x0) {
-                                                        if (3 < DAT_0007eb9c) {
-                                                          uVar10 = FUN_0004e5a0(piVar9);
-                                                          snprintf((char *)&local_828,0x800,
-                                                                   "malloc %d sensor_t failed\n",
-                                                                   uVar10);
-                                                          FUN_0002e584(3,&local_828,0);
-                                                          goto LAB_0001ce48;
-                                                        }
-                                                      }
-                                                      else {
-                                                        for (uVar21 = 0;
-                                                            uVar11 = FUN_0004e5a0(piVar9),
-                                                            uVar21 < uVar11; uVar21 = uVar21 + 1) {
-                                                          piVar12 = (int *)FUN_0004e5bc(piVar9,
-                                                  uVar21);
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 0)) {
-                                                    if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                    pcVar6 = "get array %d failed\n";
-LAB_0001d33c:
-                                                    snprintf((char *)&local_828,0x800,pcVar6,uVar21)
-                                                    ;
-                                                    FUN_0002e584(3,&local_828,0);
-                                                    goto LAB_0001ce48;
-                                                  }
-                                                  piVar15 = (int *)FUN_0004e234(piVar12,"index");
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d index failed\n";
-                                                      goto LAB_0001d33c;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,"index: %d\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  pvVar22 = DAT_0058dffc;
-                                                  iVar20 = FUN_0004e9c4(piVar15);
-                                                  iVar20 = iVar20 * 0xc;
-                                                  uVar10 = FUN_0004e9c4(piVar15);
-                                                  *(undefined4 *)((int)pvVar22 + iVar20) = uVar10;
-                                                  piVar15 = (int *)FUN_0004e234(piVar12,"type");
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 2)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d type failed\n";
-                                                      goto LAB_0001d33c;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e768();
-                                                    snprintf((char *)&local_828,0x800,"type: %s\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  piVar15 = (int *)FUN_0004e234(piVar12,&
-                                                  DAT_00062164);
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d bind_asic failed\n";
-                                                      goto LAB_0001d33c;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,"iic: %d\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  uVar10 = FUN_0004e9c4(piVar15);
-                                                  *(undefined4 *)((int)pvVar22 + iVar20 + 4) =
-                                                       uVar10;
-                                                  piVar12 = (int *)FUN_0004e234(piVar12,"x");
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 2)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d x failed\n";
-                                                      goto LAB_0001d33c;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    FUN_0004e768();
-                                                    snprintf((char *)&local_828,0x800,"x: %s\n");
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  if (DAT_0058e000 == 0) {
-                                                    pcVar6 = (char *)FUN_0004e768(piVar12);
-                                                    iVar16 = strncasecmp(pcVar6,"right",5);
-                                                    if (iVar16 == 0) {
-                                                      *(undefined *)((int)pvVar22 + iVar20 + 8) = 1;
-                                                    }
-                                                    else {
-                                                      *(undefined *)((int)pvVar22 + iVar20 + 8) = 0;
-                                                    }
-                                                  }
-                                                  }
-LAB_0001d42c:
-                                                  piVar9 = (int *)FUN_0004e234(piVar5,"eeprom");
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 0)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      local_828._0_1_ =
-                                                           s_get_eeprom_failed_000621d4[0];
-                                                      local_828._1_1_ =
-                                                           s_get_eeprom_failed_000621d4[1];
-                                                      local_828._2_1_ =
-                                                           s_get_eeprom_failed_000621d4[2];
-                                                      local_828._3_1_ =
-                                                           s_get_eeprom_failed_000621d4[3];
-                                                      local_824._0_1_ =
-                                                           s_get_eeprom_failed_000621d4[4];
-                                                      local_824._1_1_ =
-                                                           s_get_eeprom_failed_000621d4[5];
-                                                      local_824._2_1_ =
-                                                           s_get_eeprom_failed_000621d4[6];
-                                                      local_824._3_1_ =
-                                                           s_get_eeprom_failed_000621d4[7];
-                                                      local_820._0_1_ =
-                                                           s_get_eeprom_failed_000621d4[8];
-                                                      local_820._1_1_ =
-                                                           s_get_eeprom_failed_000621d4[9];
-                                                      local_820._2_1_ =
-                                                           s_get_eeprom_failed_000621d4[10];
-                                                      local_820._3_1_ =
-                                                           s_get_eeprom_failed_000621d4[11];
-                                                      local_81c._0_1_ =
-                                                           s_get_eeprom_failed_000621d4[12];
-                                                      local_81c._1_1_ =
-                                                           s_get_eeprom_failed_000621d4[13];
-                                                      local_81c._2_1_ =
-                                                           s_get_eeprom_failed_000621d4[14];
-                                                      local_81c._3_1_ =
-                                                           s_get_eeprom_failed_000621d4[15];
-                                                      local_818._0_3_ = (undefined3)ram0x000621e4;
-                                                      FUN_0002e584(3,&local_828,0);
-LAB_0001d498:
-                                                      if (3 < DAT_0007eb9c) {
-                                                        pcVar6 = "parse chain eeprom failed\n";
-                                                        goto LAB_0001caec;
-                                                      }
-                                                    }
-                                                  }
-                                                  else {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      local_828._0_1_ = s_eeprom__000621e8[0];
-                                                      local_828._1_1_ = s_eeprom__000621e8[1];
-                                                      local_828._2_1_ = s_eeprom__000621e8[2];
-                                                      local_828._3_1_ = s_eeprom__000621e8[3];
-                                                      local_824._0_1_ = s_eeprom__000621e8[4];
-                                                      local_824._1_1_ = s_eeprom__000621e8[5];
-                                                      local_824._2_1_ = s_eeprom__000621e8[6];
-                                                      local_824._3_1_ = s_eeprom__000621e8[7];
-                                                      local_820._0_1_ = (char)ram0x000621f0;
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    piVar12 = (int *)FUN_0004e234(piVar9,"type");
-                                                    if ((piVar12 == (int *)0x0) || (*piVar12 != 2))
-                                                    {
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ =
-                                                             s_get_type_failed_00061a28[0];
-                                                        local_828._1_1_ =
-                                                             s_get_type_failed_00061a28[1];
-                                                        local_828._2_1_ =
-                                                             s_get_type_failed_00061a28[2];
-                                                        local_828._3_1_ =
-                                                             s_get_type_failed_00061a28[3];
-                                                        local_824._0_1_ =
-                                                             s_get_type_failed_00061a28[4];
-                                                        local_824._1_1_ =
-                                                             s_get_type_failed_00061a28[5];
-                                                        local_824._2_1_ =
-                                                             s_get_type_failed_00061a28[6];
-                                                        local_824._3_1_ =
-                                                             s_get_type_failed_00061a28[7];
-                                                        local_820._0_1_ =
-                                                             s_get_type_failed_00061a28[8];
-                                                        local_820._1_1_ =
-                                                             s_get_type_failed_00061a28[9];
-                                                        local_820._2_1_ =
-                                                             s_get_type_failed_00061a28[10];
-                                                        local_820._3_1_ =
-                                                             s_get_type_failed_00061a28[11];
-                                                        local_81c._0_1_ =
-                                                             s_get_type_failed_00061a28[12];
-                                                        local_81c._1_1_ =
-                                                             s_get_type_failed_00061a28[13];
-                                                        local_81c._2_1_ =
-                                                             s_get_type_failed_00061a28[14];
-                                                        local_81c._3_1_ =
-                                                             s_get_type_failed_00061a28[15];
-                                                        local_818._0_1_ = (char)ram0x00061a38;
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001d498;
-                                                      }
-                                                    }
-                                                    else {
-                                                      if (4 < DAT_0007eb9c) {
-                                                        uVar10 = FUN_0004e768();
-                                                        snprintf((char *)&local_828,0x800,
-                                                                 "type: %s\n",uVar10);
-                                                        FUN_0002e584(4,&local_828,0);
-                                                      }
-                                                      piVar9 = (int *)FUN_0004e234(piVar9,"i2c_addr"
-                                                                                  );
-                                                      if ((piVar9 == (int *)0x0) || (*piVar9 != 3))
-                                                      {
-                                                        if (3 < DAT_0007eb9c) {
-                                                          local_828._0_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[0];
-                                                          local_828._1_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[1];
-                                                          local_828._2_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[2];
-                                                          local_828._3_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[3];
-                                                          local_824._0_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[4];
-                                                          local_824._1_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[5];
-                                                          local_824._2_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[6];
-                                                          local_824._3_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[7];
-                                                          local_820._0_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[8];
-                                                          local_820._1_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[9];
-                                                          local_820._2_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[10];
-                                                          local_820._3_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[11];
-                                                          local_81c._0_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[12];
-                                                          local_81c._1_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[13];
-                                                          local_81c._2_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[14];
-                                                          local_81c._3_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[15];
-                                                          local_818._0_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[16];
-                                                          local_818._1_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[17];
-                                                          local_818._2_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[18];
-                                                          local_818._3_1_ =
-                                                               s_get_i2c_addr_failed_00061ab8[19];
-                                                          local_814._0_1_ = (char)ram0x00061acc;
-                                                          FUN_0002e584(3,&local_828,0);
-                                                          goto LAB_0001d498;
-                                                        }
-                                                      }
-                                                      else {
-                                                        if (4 < DAT_0007eb9c) {
-                                                          uVar10 = FUN_0004e9c4();
-                                                          snprintf((char *)&local_828,0x800,
-                                                                   "i2c_addr: %d\n",uVar10);
-                                                          FUN_0002e584(4,&local_828,0);
-                                                        }
-                                                        piVar9 = (int *)FUN_0004e234(piVar5,"sensor"
-                                                                                    );
-                                                        if ((piVar9 == (int *)0x0) || (*piVar9 != 1)
-                                                           ) {
-                                                          if (3 < DAT_0007eb9c) {
-                                                            local_828._0_1_ =
-                                                                 s_get_sensor_failed_00062210[0];
-                                                            local_828._1_1_ =
-                                                                 s_get_sensor_failed_00062210[1];
-                                                            local_828._2_1_ =
-                                                                 s_get_sensor_failed_00062210[2];
-                                                            local_828._3_1_ =
-                                                                 s_get_sensor_failed_00062210[3];
-                                                            local_824._0_1_ =
-                                                                 s_get_sensor_failed_00062210[4];
-                                                            local_824._1_1_ =
-                                                                 s_get_sensor_failed_00062210[5];
-                                                            local_824._2_1_ =
-                                                                 s_get_sensor_failed_00062210[6];
-                                                            local_824._3_1_ =
-                                                                 s_get_sensor_failed_00062210[7];
-                                                            local_820._0_1_ =
-                                                                 s_get_sensor_failed_00062210[8];
-                                                            local_820._1_1_ =
-                                                                 s_get_sensor_failed_00062210[9];
-                                                            local_820._2_1_ =
-                                                                 s_get_sensor_failed_00062210[10];
-                                                            local_820._3_1_ =
-                                                                 s_get_sensor_failed_00062210[11];
-                                                            local_81c._0_1_ =
-                                                                 s_get_sensor_failed_00062210[12];
-                                                            local_81c._1_1_ =
-                                                                 s_get_sensor_failed_00062210[13];
-                                                            local_81c._2_1_ =
-                                                                 s_get_sensor_failed_00062210[14];
-                                                            local_81c._3_1_ =
-                                                                 s_get_sensor_failed_00062210[15];
-                                                            local_818._0_3_ =
-                                                                 (undefined3)ram0x00062220;
-                                                            FUN_0002e584(3,&local_828,0);
-LAB_0001d68c:
-                                                            if (3 < DAT_0007eb9c) {
-                                                              pcVar6 = "parse chain sensor failed\n"
-                                                              ;
-                                                              goto LAB_0001caec;
-                                                            }
-                                                          }
-                                                        }
-                                                        else {
-                                                          if (4 < DAT_0007eb9c) {
-                                                            local_828._0_1_ =
-                                                                 s_pic_sensor__000620ec[4];
-                                                            local_828._1_1_ =
-                                                                 s_pic_sensor__000620ec[5];
-                                                            local_828._2_1_ =
-                                                                 s_pic_sensor__000620ec[6];
-                                                            local_828._3_1_ =
-                                                                 s_pic_sensor__000620ec[7];
-                                                            local_824._0_1_ =
-                                                                 s_pic_sensor__000620ec[8];
-                                                            local_824._1_1_ =
-                                                                 s_pic_sensor__000620ec[9];
-                                                            local_824._2_1_ =
-                                                                 s_pic_sensor__000620ec[10];
-                                                            local_824._3_1_ =
-                                                                 s_pic_sensor__000620ec[11];
-                                                            local_820._0_1_ = (char)ram0x000620f8;
-                                                            FUN_0002e584(4,&local_828,0);
-                                                          }
-                                                          DAT_0058dfd4 = FUN_0004e5a0(piVar9);
-                                                          sVar7 = FUN_0004e5a0(piVar9);
-                                                          DAT_0058dff4 = calloc(sVar7,0xc);
-                                                          if (DAT_0058dff4 == (void *)0x0) {
-                                                            if (3 < DAT_0007eb9c) {
-                                                              uVar10 = FUN_0004e5a0(piVar9);
-                                                              snprintf((char *)&local_828,0x800,
-                                                                       "malloc %d sensor_t failed\n"
-                                                                       ,uVar10);
-                                                              FUN_0002e584(3,&local_828,0);
-                                                              goto LAB_0001d68c;
-                                                            }
-                                                          }
-                                                          else {
-                                                            for (uVar21 = 0;
-                                                                uVar11 = FUN_0004e5a0(piVar9),
-                                                                uVar21 < uVar11; uVar21 = uVar21 + 1
-                                                                ) {
-                                                              piVar12 = (int *)FUN_0004e5bc(piVar9,
-                                                  uVar21);
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 0)) {
-                                                    if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                    pcVar6 = "get array %d failed\n";
-LAB_0001d8a8:
-                                                    snprintf((char *)&local_828,0x800,pcVar6,uVar21)
-                                                    ;
-                                                    FUN_0002e584(3,&local_828,0);
-                                                    goto LAB_0001d68c;
-                                                  }
-                                                  piVar15 = (int *)FUN_0004e234(piVar12,"index");
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d index failed\n";
-                                                      goto LAB_0001d8a8;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,"index: %d\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  pvVar22 = DAT_0058dff4;
-                                                  iVar20 = FUN_0004e9c4(piVar15);
-                                                  piVar15 = (int *)FUN_0004e234(piVar12,"type");
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 2)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d type failed\n";
-                                                      goto LAB_0001d8a8;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e768();
-                                                    snprintf((char *)&local_828,0x800,"type: %s\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  piVar12 = (int *)FUN_0004e234(piVar12,"bind_asic")
-                                                  ;
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d bind_asic failed\n";
-                                                      goto LAB_0001d8a8;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,
-                                                             "bind_asic: %d\n",uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  uVar10 = FUN_0004e9c4(piVar12);
-                                                  *(undefined4 *)((int)pvVar22 + iVar20 * 0xc + 4) =
-                                                       uVar10;
-                                                  }
-                                                  piVar5 = (int *)FUN_0004e234(piVar5,"domain");
-                                                  if ((piVar5 != (int *)0x0) && (*piVar5 == 1)) {
-                                                    if (4 < DAT_0007eb9c) {
-                                                      local_828._0_1_ = s_domain__00062278[0];
-                                                      local_828._1_1_ = s_domain__00062278[1];
-                                                      local_828._2_1_ = s_domain__00062278[2];
-                                                      local_828._3_1_ = s_domain__00062278[3];
-                                                      local_824._0_1_ = s_domain__00062278[4];
-                                                      local_824._1_1_ = s_domain__00062278[5];
-                                                      local_824._2_1_ = s_domain__00062278[6];
-                                                      local_824._3_1_ = s_domain__00062278[7];
-                                                      local_820._0_1_ = (char)ram0x00062280;
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    for (pvVar22 = (void *)0x0;
-                                                        pvVar13 = (void *)FUN_0004e5a0(piVar5),
-                                                        pvVar22 < pvVar13;
-                                                        pvVar22 = (void *)((int)pvVar22 + 1)) {
-                                                      piVar9 = (int *)FUN_0004e5bc(piVar5,pvVar22);
-                                                      if ((piVar9 == (int *)0x0) || (*piVar9 != 0))
-                                                      {
-                                                        if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                        pcVar6 = "get array %d failed\n";
-LAB_0001dba0:
-                                                        snprintf((char *)&local_828,0x800,pcVar6,
-                                                                 pvVar22);
-                                                        FUN_0002e584(3,&local_828,0);
-                                                        goto LAB_0001d9a4;
-                                                      }
-                                                      piVar12 = (int *)FUN_0004e234(piVar9,"index");
-                                                      if ((piVar12 == (int *)0x0) || (*piVar12 != 3)
-                                                         ) {
-                                                        if (3 < DAT_0007eb9c) {
-                                                          pcVar6 = "get array %d index failed\n";
-                                                          goto LAB_0001dba0;
-                                                        }
-                                                        goto LAB_0001b53c;
-                                                      }
-                                                      if (4 < DAT_0007eb9c) {
-                                                        uVar10 = FUN_0004e9c4();
-                                                        snprintf((char *)&local_828,0x800,
-                                                                 "index: %d\n",uVar10);
-                                                        FUN_0002e584(4,&local_828,0);
-                                                      }
-                                                      piVar9 = (int *)FUN_0004e234(piVar9,&
-                                                  DAT_00061c3c);
-                                                  if ((piVar9 == (int *)0x0) || (*piVar9 != 1)) {
-                                                    if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                    local_828._0_1_ = s_get_asic_failed_00061c44[0];
-                                                    local_828._1_1_ = s_get_asic_failed_00061c44[1];
-                                                    local_828._2_1_ = s_get_asic_failed_00061c44[2];
-                                                    local_828._3_1_ = s_get_asic_failed_00061c44[3];
-                                                    local_824._0_1_ = s_get_asic_failed_00061c44[4];
-                                                    local_824._1_1_ = s_get_asic_failed_00061c44[5];
-                                                    local_824._2_1_ = s_get_asic_failed_00061c44[6];
-                                                    local_824._3_1_ = s_get_asic_failed_00061c44[7];
-                                                    local_820._0_1_ = s_get_asic_failed_00061c44[8];
-                                                    local_820._1_1_ = s_get_asic_failed_00061c44[9];
-                                                    local_820._2_1_ = s_get_asic_failed_00061c44[10]
-                                                    ;
-                                                    local_820._3_1_ = s_get_asic_failed_00061c44[11]
-                                                    ;
-                                                    local_81c._0_1_ = s_get_asic_failed_00061c44[12]
-                                                    ;
-                                                    local_81c._1_1_ = s_get_asic_failed_00061c44[13]
-                                                    ;
-                                                    local_81c._2_1_ = s_get_asic_failed_00061c44[14]
-                                                    ;
-                                                    local_81c._3_1_ = s_get_asic_failed_00061c44[15]
-                                                    ;
-                                                    local_818._0_1_ = (char)ram0x00061c54;
-                                                    FUN_0002e584(3,&local_828,0);
-LAB_0001db44:
-                                                    if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                    snprintf((char *)&local_828,0x800,
-                                                             "parse arrry %d asic failed\n",pvVar22)
-                                                    ;
-                                                    FUN_0002e584(3,&local_828,0);
-                                                    goto LAB_0001d9a4;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    local_828._0_1_ = (char)DAT_00061c58;
-                                                    local_828._1_1_ = DAT_00061c58._1_1_;
-                                                    local_828._2_1_ = DAT_00061c58._2_1_;
-                                                    local_828._3_1_ = DAT_00061c58._3_1_;
-                                                    local_824._0_3_ = (undefined3)DAT_00061c5c;
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  for (uVar21 = 0; uVar11 = FUN_0004e5a0(piVar9),
-                                                      uVar21 < uVar11; uVar21 = uVar21 + 1) {
-                                                    piVar12 = (int *)FUN_0004e5bc(piVar9,uVar21);
-                                                    if ((piVar12 == (int *)0x0) || (*piVar12 != 0))
-                                                    {
-                                                      if (DAT_0007eb9c < 4) goto LAB_0001b53c;
-                                                      pcVar6 = "get array %d failed\n";
-LAB_0001de28:
-                                                      snprintf((char *)&local_828,0x800,pcVar6,
-                                                               uVar21);
-                                                      FUN_0002e584(3,&local_828,0);
-                                                      goto LAB_0001db44;
-                                                    }
-                                                    piVar15 = (int *)FUN_0004e234(piVar12,"index");
-                                                    if ((piVar15 == (int *)0x0) || (*piVar15 != 3))
-                                                    {
-                                                      if (3 < DAT_0007eb9c) {
-                                                        pcVar6 = "get array %d index failed\n";
-                                                        goto LAB_0001de28;
-                                                      }
-                                                      goto LAB_0001b53c;
-                                                    }
-                                                    if (4 < DAT_0007eb9c) {
-                                                      uVar10 = FUN_0004e9c4();
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "index: %d\n",uVar10);
-                                                      FUN_0002e584(4,&local_828,0);
-                                                    }
-                                                    iVar20 = FUN_0004e9c4(piVar15);
-                                                    iVar16 = *(int *)((int)DAT_0058dff0 + 8);
-                                                    *(int *)(iVar16 + iVar20 * 0x1c) = iVar20;
-                                                    iVar16 = iVar16 + iVar20 * 0x1c;
-                                                    piVar12 = (int *)FUN_0004e234(piVar12,
-                                                  "coordinate");
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 1)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d coordinate failed\n";
-                                                      goto LAB_0001de28;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  piVar15 = (int *)FUN_0004e5bc(piVar12,0);
-                                                  if ((piVar15 == (int *)0x0) || (*piVar15 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d coordinate x failed\n";
-                                                      goto LAB_0001de28;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,"x: %d\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  uVar10 = FUN_0004e9c4(piVar15);
-                                                  *(undefined4 *)(iVar16 + 4) = uVar10;
-                                                  piVar12 = (int *)FUN_0004e5bc(piVar12,1);
-                                                  if ((piVar12 == (int *)0x0) || (*piVar12 != 3)) {
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "get array %d coordinate y failed\n";
-                                                      goto LAB_0001de28;
-                                                    }
-                                                    goto LAB_0001b53c;
-                                                  }
-                                                  if (4 < DAT_0007eb9c) {
-                                                    uVar10 = FUN_0004e9c4();
-                                                    snprintf((char *)&local_828,0x800,"y: %d\n",
-                                                             uVar10);
-                                                    FUN_0002e584(4,&local_828,0);
-                                                  }
-                                                  uVar10 = FUN_0004e9c4(piVar12);
-                                                  *(undefined4 *)(iVar16 + 8) = uVar10;
-                                                  }
-                                                  }
-                                                  pvVar22 = *(void **)((int)DAT_0058dff0 + 8);
-                                                  for (iVar20 = 1; iVar20 < (int)DAT_0058dfbc;
-                                                      iVar20 = iVar20 + 1) {
-                                                    pvVar13 = memcpy(*(void **)((int)DAT_0058dff0 +
-                                                                               iVar20 * 0x14 + 8),
-                                                                     pvVar22,DAT_0058dfcc * 0x1c);
-                                                  }
-                                                  for (iVar20 = 0; pvVar22 = DAT_0058dff4,
-                                                      iVar20 < DAT_0058dfd4; iVar20 = iVar20 + 1) {
-                                                    iVar16 = *(int *)((int)DAT_0058dff4 +
-                                                                     iVar20 * 0xc + 4);
-                                                    iVar14 = iVar16 * 0x1c +
-                                                             *(int *)((int)DAT_0058dff0 + 8);
-                                                    if (3 < DAT_0007eb9c) {
-                                                      snprintf((char *)&local_828,0x800,
-                                                               "asic %d, wind %d, y %d\n",iVar16,
-                                                               DAT_0058e000,
-                                                               *(undefined4 *)(iVar14 + 8));
-                                                      pvVar13 = (void *)FUN_0002e584(3,&local_828,0)
-                                                      ;
-                                                    }
-                                                    if (DAT_0058e000 == 1) {
-                                                      pvVar13 = (void *)(DAT_0058dfc4 * 0x55555556);
-                                                      if (DAT_0058dfc4 / 3 < *(int *)(iVar14 + 8))
-                                                      goto LAB_0001e03c;
-                                                      uVar18 = 1;
-                                                      if (3 < DAT_0007eb9c) {
-                                                        local_828._0_1_ = s_air_in_00062350[0];
-                                                        local_828._1_1_ = s_air_in_00062350[1];
-                                                        local_828._2_1_ = s_air_in_00062350[2];
-                                                        local_828._3_1_ = s_air_in_00062350[3];
-                                                        local_824._0_1_ = s_air_in_00062350[4];
-                                                        local_824._1_1_ = s_air_in_00062350[5];
-                                                        local_824._2_1_ = s_air_in_00062350[6];
-                                                        local_824._3_1_ = s_air_in_00062350[7];
-                                                        pvVar13 = (void *)FUN_0002e584(3,&local_828,
-                                                                                       0);
-                                                      }
-                                                    }
-                                                    else if ((DAT_0058e000 == 0) &&
-                                                            (pvVar13 = (void *)(DAT_0058dfc4 *
-                                                                               -0x55555554),
-                                                            (DAT_0058dfc4 * 2) / 3 <=
-                                                            *(int *)(iVar14 + 8))) {
-                                                      if (DAT_0007eb9c < 4) {
-                                                        uVar18 = 1;
-                                                      }
-                                                      else {
-                                                        local_828._0_1_ = s_air_in_00062350[0];
-                                                        local_828._1_1_ = s_air_in_00062350[1];
-                                                        local_828._2_1_ = s_air_in_00062350[2];
-                                                        local_828._3_1_ = s_air_in_00062350[3];
-                                                        local_824._0_1_ = s_air_in_00062350[4];
-                                                        local_824._1_1_ = s_air_in_00062350[5];
-                                                        local_824._2_1_ = s_air_in_00062350[6];
-                                                        local_824._3_1_ = s_air_in_00062350[7];
-                                                        pvVar13 = (void *)FUN_0002e584(3,&local_828,
-                                                                                       0);
-                                                        uVar18 = 1;
-                                                      }
-                                                    }
-                                                    else {
-LAB_0001e03c:
-                                                      if (DAT_0007eb9c < 4) {
-                                                        uVar18 = 0;
-                                                      }
-                                                      else {
-                                                        local_828._0_1_ = s_air_out_00062358[0];
-                                                        local_828._1_1_ = s_air_out_00062358[1];
-                                                        local_828._2_1_ = s_air_out_00062358[2];
-                                                        local_828._3_1_ = s_air_out_00062358[3];
-                                                        local_824._0_1_ = s_air_out_00062358[4];
-                                                        local_824._1_1_ = s_air_out_00062358[5];
-                                                        local_824._2_1_ = s_air_out_00062358[6];
-                                                        local_824._3_1_ = s_air_out_00062358[7];
-                                                        local_820._0_1_ = (char)ram0x00062360;
-                                                        pvVar13 = (void *)FUN_0002e584(3,&local_828,
-                                                                                       0);
-                                                        uVar18 = 0;
-                                                      }
-                                                    }
-                                                    *(undefined *)((int)pvVar22 + iVar20 * 0xc + 8)
-                                                         = uVar18;
-                                                  }
-                                                  iVar20 = FUN_0001b398(pvVar13);
-                                                  if ((iVar20 != 0) && (3 < DAT_0007eb9c)) {
-                                                    local_828._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[0];
-                                                    local_828._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[1];
-                                                    local_828._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[2];
-                                                    local_828._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[3];
-                                                    local_824._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[4];
-                                                    local_824._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[5];
-                                                    local_824._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[6];
-                                                    local_824._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[7];
-                                                    local_820._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[8];
-                                                    local_820._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[9];
-                                                    local_820._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[10];
-                                                    local_820._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[11];
-                                                    local_81c._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[12];
-                                                    local_81c._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[13];
-                                                    local_81c._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[14];
-                                                    local_81c._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[15];
-                                                    local_818._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[16];
-                                                    local_818._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[17];
-                                                    local_818._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[18];
-                                                    local_818._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[19];
-                                                    local_814._0_1_ =
-                                                         s_init_topol_runtime_failed_00062378[20];
-                                                    local_814._1_1_ =
-                                                         s_init_topol_runtime_failed_00062378[21];
-                                                    local_814._2_1_ =
-                                                         s_init_topol_runtime_failed_00062378[22];
-                                                    local_814._3_1_ =
-                                                         s_init_topol_runtime_failed_00062378[23];
-                                                    local_810._0_3_ = (undefined3)ram0x00062390;
-                                                    FUN_0002e584(3,&local_828,0);
-                                                  }
-                                                  goto LAB_0001b540;
-                                                  }
-                                                  if (3 < DAT_0007eb9c) {
-                                                    local_828._0_1_ =
-                                                         s_get_domain_failed_00062264[0];
-                                                    local_828._1_1_ =
-                                                         s_get_domain_failed_00062264[1];
-                                                    local_828._2_1_ =
-                                                         s_get_domain_failed_00062264[2];
-                                                    local_828._3_1_ =
-                                                         s_get_domain_failed_00062264[3];
-                                                    local_824._0_1_ =
-                                                         s_get_domain_failed_00062264[4];
-                                                    local_824._1_1_ =
-                                                         s_get_domain_failed_00062264[5];
-                                                    local_824._2_1_ =
-                                                         s_get_domain_failed_00062264[6];
-                                                    local_824._3_1_ =
-                                                         s_get_domain_failed_00062264[7];
-                                                    local_820._0_1_ =
-                                                         s_get_domain_failed_00062264[8];
-                                                    local_820._1_1_ =
-                                                         s_get_domain_failed_00062264[9];
-                                                    local_820._2_1_ =
-                                                         s_get_domain_failed_00062264[10];
-                                                    local_820._3_1_ =
-                                                         s_get_domain_failed_00062264[11];
-                                                    local_81c._0_1_ =
-                                                         s_get_domain_failed_00062264[12];
-                                                    local_81c._1_1_ =
-                                                         s_get_domain_failed_00062264[13];
-                                                    local_81c._2_1_ =
-                                                         s_get_domain_failed_00062264[14];
-                                                    local_81c._3_1_ =
-                                                         s_get_domain_failed_00062264[15];
-                                                    local_818._0_3_ = (undefined3)ram0x00062274;
-                                                    FUN_0002e584(3,&local_828,0);
-LAB_0001d9a4:
-                                                    if (3 < DAT_0007eb9c) {
-                                                      pcVar6 = "parse chain domain failed\n";
-                                                      goto LAB_0001caec;
-                                                    }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                          else {
-                            iVar20 = strncmp(pcVar6,"left",4);
-                            if (iVar20 == 0) {
-                              iVar20 = strncmp(pcVar8,"out",2);
-                              if (iVar20 != 0) {
-                                iVar20 = strncmp(pcVar8,"in",2);
-                                goto joined_r0x0001c174;
-                              }
-                              goto LAB_0001c3f4;
-                            }
-LAB_0001c0e4:
-                            if (3 < DAT_0007eb9c) {
-                              snprintf((char *)&local_828,0x800,
-                                       "unkonwn wind position %s, direction %s\n",pcVar6,pcVar8);
-                              FUN_0002e584(3,&local_828,0);
-                              goto LAB_0001bdac;
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-LAB_0001b53c:
-  iVar20 = -1;
-LAB_0001b540:
-  if (piVar4[1] != -1) {
-    piVar5 = piVar4 + 1;
-    DataMemoryBarrier(0xb);
-    do {
-      iVar16 = *piVar5;
-      bVar2 = (bool)hasExclusiveAccess(piVar5);
-    } while (!bVar2);
-    *piVar5 = iVar16 + -1;
-    if (iVar16 + -1 == 0) {
-      FUN_0004eb6c(piVar4);
-    }
-  }
-  return iVar20;
-}
+  char *v0; // r0
+  char *v1; // r4
+  int v2; // r6
+  _DWORD *v3; // r0
+  _DWORD *v4; // r7
+  unsigned int v5; // r3
+  unsigned int *v6; // r3
+  unsigned int v7; // r2
+  unsigned int v8; // r2
+  const char *v10; // r7
+  size_t v11; // r0
+  char *v12; // r0
+  const char *v13; // r6
+  _DWORD *v14; // r0
+  unsigned int v15; // r3
+  const char *v16; // lr
+  int v17; // r0
+  int v18; // r1
+  int v19; // r2
+  int v20; // r3
+  _DWORD *v21; // lr
+  int v22; // r1
+  const char *v23; // r0
+  _DWORD *v24; // r0
+  unsigned int v25; // r3
+  const char *v26; // r0
+  const char *v27; // r0
+  _DWORD *v28; // r0
+  _DWORD *v29; // r6
+  unsigned int v30; // r3
+  _DWORD *v31; // r0
+  unsigned int v32; // r3
+  const char *v33; // r0
+  _DWORD *v34; // r0
+  _DWORD *v35; // r6
+  unsigned int v36; // r3
+  _DWORD *v37; // r0
+  unsigned int v38; // r3
+  const char *v39; // r12
+  int v40; // r0
+  int v41; // r1
+  int v42; // r2
+  int v43; // r3
+  int v44; // r12
+  const char *v45; // r12
+  int v46; // r0
+  int v47; // r1
+  int v48; // r2
+  int v49; // r3
+  int v50; // r12
+  const char *v51; // r0
+  _DWORD *v52; // r0
+  _DWORD *v53; // r9
+  signed int v54; // r7
+  int v55; // r7
+  int v56; // r0
+  __int16 v57; // r0
+  int v58; // r3
+  _DWORD *v59; // r0
+  _DWORD *v60; // r0
+  int v61; // r0
+  int v62; // r0
+  _DWORD *v63; // r0
+  _DWORD *v64; // r8
+  unsigned int v65; // r3
+  unsigned int v66; // r6
+  const char *v67; // r7
+  const char *v68; // r9
+  _DWORD *v69; // r0
+  _DWORD *v70; // r9
+  _DWORD *v71; // r0
+  _DWORD *v72; // r7
+  const char *v73; // r0
+  _DWORD *v74; // r0
+  _DWORD *v75; // r7
+  _DWORD *v76; // r0
+  int v77; // r0
+  const char *v78; // r0
+  _DWORD *v79; // r0
+  _DWORD *v80; // r6
+  unsigned int v81; // r3
+  _DWORD *v82; // r0
+  const char *v83; // r0
+  _DWORD *v84; // r0
+  _DWORD *v85; // r7
+  const char *v86; // r0
+  int v87; // r0
+  const char *v88; // lr
+  int v89; // r0
+  int v90; // r1
+  int v91; // r2
+  int v92; // r3
+  _DWORD *v93; // lr
+  int v94; // r1
+  int v95; // r2
+  _DWORD *v96; // r0
+  _DWORD *v97; // r7
+  const char *v98; // r0
+  int v99; // r0
+  _DWORD *v100; // r0
+  _DWORD *v101; // r7
+  const char *v102; // r12
+  int v103; // r0
+  int v104; // r1
+  int v105; // r2
+  int v106; // r3
+  _DWORD *v107; // r12
+  int v108; // r1
+  int v109; // r2
+  int v110; // r3
+  int v111; // r0
+  _DWORD *v112; // r0
+  _DWORD *v113; // r7
+  int v114; // r0
+  _DWORD *v115; // r0
+  _DWORD *v116; // r7
+  int v117; // r0
+  _DWORD *v118; // r0
+  _DWORD *v119; // r6
+  int v120; // r0
+  _DWORD *v121; // r0
+  _DWORD *v122; // r6
+  const char *v123; // r12
+  int v124; // r0
+  int v125; // r1
+  int v126; // r2
+  int v127; // r3
+  _DWORD *v128; // r12
+  int v129; // r1
+  _DWORD *v130; // r0
+  _DWORD *v131; // r6
+  int v132; // r0
+  int v133; // r0
+  _DWORD *v134; // r0
+  _DWORD *v135; // r6
+  int v136; // r0
+  _DWORD *v137; // r0
+  _DWORD *v138; // r6
+  int v139; // r0
+  _DWORD *v140; // r0
+  _DWORD *v141; // r6
+  const char *v142; // lr
+  int v143; // r0
+  int v144; // r1
+  int v145; // r2
+  int v146; // r3
+  _DWORD *v147; // lr
+  int v148; // r1
+  int v149; // r2
+  int v150; // r0
+  _DWORD *v151; // r0
+  _DWORD *v152; // r6
+  int v153; // r0
+  int v154; // r0
+  int v155; // r8
+  signed int v156; // r7
+  int v157; // r6
+  size_t v158; // r10
+  signed int v159; // r9
+  signed int v160; // r6
+  int v161; // r8
+  int v162; // r8
+  void *v163; // r0
+  void *v164; // r0
+  int v165; // r0
+  signed int i; // r3
+  int v167; // r2
+  int v168; // r2
+  _DWORD *v169; // r0
+  _DWORD *v170; // r6
+  _DWORD *v171; // r0
+  const char *v172; // r0
+  _DWORD *v173; // r0
+  int v174; // r0
+  _DWORD *v175; // r0
+  _DWORD *v176; // r8
+  const char *v177; // r6
+  size_t v178; // r0
+  unsigned int j; // r7
+  _DWORD *v180; // r0
+  _DWORD *v181; // r9
+  _DWORD *v182; // r0
+  _DWORD *v183; // r10
+  int v184; // r0
+  int v185; // r6
+  int v186; // r6
+  _DWORD *v187; // r0
+  const char *v188; // r0
+  _DWORD *v189; // r0
+  _DWORD *v190; // r10
+  int v191; // r0
+  _DWORD *v192; // r0
+  _DWORD *v193; // r10
+  const char *v194; // r0
+  const char *v195; // r0
+  int v196; // r0
+  char v197; // r3
+  int v198; // r0
+  _DWORD *v199; // r0
+  _DWORD *v200; // r6
+  _DWORD *v201; // r0
+  const char *v202; // r0
+  _DWORD *v203; // r0
+  int v204; // r0
+  _DWORD *v205; // r0
+  _DWORD *v206; // r7
+  size_t v207; // r0
+  unsigned int k; // r6
+  _DWORD *v209; // r0
+  _DWORD *v210; // r9
+  _DWORD *v211; // r0
+  _DWORD *v212; // r8
+  int v213; // r0
+  int v214; // r10
+  int v215; // r8
+  _DWORD *v216; // r0
+  const char *v217; // r0
+  _DWORD *v218; // r0
+  _DWORD *v219; // r9
+  int v220; // r0
+  int v221; // r0
+  unsigned int v222; // r7
+  _DWORD *v223; // r0
+  _DWORD *v224; // r4
+  _DWORD *v225; // r0
+  int v226; // r0
+  _DWORD *v227; // r0
+  _DWORD *v228; // r6
+  int v229; // r6
+  const void *v230; // r7
+  int v231; // r3
+  unsigned int m; // r10
+  _DWORD *v233; // r0
+  _DWORD *v234; // r4
+  _DWORD *v235; // r0
+  _DWORD *v236; // r8
+  int v237; // r0
+  int v238; // r2
+  _DWORD *v239; // r0
+  int v240; // r4
+  int v241; // r4
+  _DWORD *v242; // r0
+  _DWORD *v243; // r8
+  _DWORD *v244; // r0
+  _DWORD *v245; // r9
+  int v246; // r0
+  _DWORD *v247; // r0
+  _DWORD *v248; // r8
+  int v249; // r0
+  int n; // r9
+  int v251; // r6
+  int v252; // r7
+  char v253; // r3
+  char *v254; // [sp+10h] [bp-940h]
+  char *v255; // [sp+10h] [bp-940h]
+  char *format; // [sp+14h] [bp-93Ch]
+  char *formata; // [sp+14h] [bp-93Ch]
+  char formatb; // [sp+14h] [bp-93Ch]
+  char *v259; // [sp+18h] [bp-938h]
+  int v260; // [sp+20h] [bp-930h]
+  char v261[252]; // [sp+2Ch] [bp-924h] BYREF
+  char s[2088]; // [sp+128h] [bp-828h] BYREF
 
+  v0 = (char *)sub_4D6E4("/etc/topol.conf", 0, v261);
+  v1 = v0;
+  if ( v0 && !*(_DWORD *)v0 )
+  {
+    v3 = (_DWORD *)((int (*)(void))sub_4E234)();
+    v4 = v3;
+    if ( !v3 )
+    {
+      v5 = dword_7EB9C;
+      goto LABEL_9;
+    }
+    v5 = dword_7EB9C;
+    if ( *v3 != 2 )
+    {
+LABEL_9:
+      if ( v5 <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get machine failed\n");
+      sub_2E584(3, s, 0);
+LABEL_18:
+      if ( (unsigned int)dword_7EB9C > 3 )
+      {
+        v2 = -1;
+        strcpy(s, "parse machine failed\n");
+        sub_2E584(3, s, 0);
+        goto LABEL_11;
+      }
+      goto LABEL_10;
+    }
+    if ( (unsigned int)dword_7EB9C > 3 )
+    {
+      v23 = (const char *)((int (*)(void))sub_4E768)();
+      snprintf(s, 0x800u, "load machine %s conf\n", v23);
+      sub_2E584(3, s, 0);
+    }
+    v10 = (const char *)sub_4E768(v4);
+    v11 = strlen(v10);
+    v12 = (char *)calloc(v11 + 1, 1u);
+    v13 = v12;
+    dword_58DFB8 = (int)v12;
+    if ( !v12 )
+    {
+      if ( (unsigned int)dword_7EB9C <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get machine failed, Cannot allocate space\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_18;
+    }
+    strcpy(v12, v10);
+    if ( (unsigned int)dword_7EB9C > 3 )
+    {
+      snprintf(s, 0x800u, "machine : %s \n", v13);
+      sub_2E584(3, s, 0);
+    }
+    v14 = (_DWORD *)sub_4E234(v1, "hw_version");
+    if ( !v14 )
+    {
+      v15 = dword_7EB9C;
+LABEL_28:
+      if ( v15 <= 3 )
+        goto LABEL_10;
+      v16 = "get hw_version failed\n";
+LABEL_31:
+      v17 = *(_DWORD *)v16;
+      v18 = *((_DWORD *)v16 + 1);
+      v19 = *((_DWORD *)v16 + 2);
+      v20 = *((_DWORD *)v16 + 3);
+      v21 = v16 + 16;
+      *(_DWORD *)s = v17;
+      *(_DWORD *)&s[4] = v18;
+      *(_DWORD *)&s[8] = v19;
+      *(_DWORD *)&s[12] = v20;
+      v22 = v21[1];
+      *(_DWORD *)&s[16] = *v21;
+      *(_WORD *)&s[20] = v22;
+      s[22] = BYTE2(v22);
+      sub_2E584(3, s, 0);
+      goto LABEL_18;
+    }
+    v15 = dword_7EB9C;
+    if ( *v14 != 2 )
+      goto LABEL_28;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v26 = (const char *)sub_4E768(v14);
+      snprintf(s, 0x800u, "hw_version: %s\n", v26);
+      sub_2E584(4, s, 0);
+    }
+    v24 = (_DWORD *)sub_4E234(v1, "sw_version");
+    if ( !v24 )
+    {
+      v25 = dword_7EB9C;
+LABEL_39:
+      if ( v25 <= 3 )
+        goto LABEL_10;
+      v16 = "get sw_version failed\n";
+      goto LABEL_31;
+    }
+    v25 = dword_7EB9C;
+    if ( *v24 != 2 )
+      goto LABEL_39;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v27 = (const char *)sub_4E768(v24);
+      snprintf(s, 0x800u, "sw_version: %s\n", v27);
+      sub_2E584(4, s, 0);
+    }
+    v28 = (_DWORD *)sub_4E234(v1, "processor");
+    v29 = v28;
+    if ( !v28 )
+    {
+      v30 = dword_7EB9C;
+LABEL_55:
+      if ( v30 <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get processor failed\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_53;
+    }
+    v30 = dword_7EB9C;
+    if ( *v28 )
+      goto LABEL_55;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      strcpy(s, "processor:\n");
+      sub_2E584(4, s, 0);
+    }
+    v31 = (_DWORD *)sub_4E234(v29, "type");
+    if ( !v31 )
+    {
+      v32 = dword_7EB9C;
+LABEL_51:
+      if ( v32 <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get type failed\n");
+      sub_2E584(3, s, 0);
+LABEL_53:
+      if ( (unsigned int)dword_7EB9C > 3 )
+      {
+        v2 = -1;
+        strcpy(s, "parse processor failed\n");
+        sub_2E584(3, s, 0);
+        goto LABEL_11;
+      }
+      goto LABEL_10;
+    }
+    v32 = dword_7EB9C;
+    if ( *v31 != 2 )
+      goto LABEL_51;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v33 = (const char *)sub_4E768(v31);
+      snprintf(s, 0x800u, "type: %s\n", v33);
+      sub_2E584(4, s, 0);
+    }
+    v34 = (_DWORD *)sub_4E234(v1, "power");
+    v35 = v34;
+    if ( !v34 )
+    {
+      v36 = dword_7EB9C;
+LABEL_74:
+      if ( v36 <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get power failed\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_71;
+    }
+    v36 = dword_7EB9C;
+    if ( *v34 )
+      goto LABEL_74;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      strcpy(s, "power:\n");
+      sub_2E584(4, s, 0);
+    }
+    v37 = (_DWORD *)sub_4E234(v35, "type");
+    if ( !v37 )
+    {
+      v38 = dword_7EB9C;
+LABEL_67:
+      if ( v38 <= 3 )
+        goto LABEL_10;
+      v39 = "get type failed\n";
+LABEL_70:
+      v40 = *(_DWORD *)v39;
+      v41 = *((_DWORD *)v39 + 1);
+      v42 = *((_DWORD *)v39 + 2);
+      v43 = *((_DWORD *)v39 + 3);
+      v44 = *((_DWORD *)v39 + 4);
+      *(_DWORD *)s = v40;
+      *(_DWORD *)&s[4] = v41;
+      *(_DWORD *)&s[8] = v42;
+      *(_DWORD *)&s[12] = v43;
+      s[16] = v44;
+      sub_2E584(3, s, 0);
+LABEL_71:
+      if ( (unsigned int)dword_7EB9C <= 3 )
+        goto LABEL_10;
+      v45 = "parse power failed\n";
+      goto LABEL_73;
+    }
+    v38 = dword_7EB9C;
+    if ( *v37 != 2 )
+      goto LABEL_67;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v51 = (const char *)sub_4E768(v37);
+      snprintf(s, 0x800u, "type: %s\n", v51);
+      sub_2E584(4, s, 0);
+    }
+    v52 = (_DWORD *)sub_4E234(v35, "version");
+    v53 = v52;
+    if ( !v52 || *v52 != 1 )
+    {
+      if ( (unsigned int)dword_7EB9C <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get version array failed\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_71;
+    }
+    v54 = ((int (*)(void))sub_4E5A0)();
+    dword_58E038 = v54;
+    dword_58E03C = (int)calloc(v54, 2u);
+    if ( v54 > 0 )
+    {
+      v55 = 0;
+      do
+      {
+        v56 = sub_4E5BC(v53, v55);
+        v57 = sub_4E9C4(v56);
+        v58 = 2 * v55++;
+        *(_WORD *)(dword_58E03C + v58) = v57;
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          snprintf(s, 0x800u, "psu version = 0x%x", *(unsigned __int16 *)(dword_58E03C + v58));
+          sub_2E584(4, s, 0);
+        }
+      }
+      while ( v55 < dword_58E038 );
+    }
+    v59 = (_DWORD *)sub_4E234(v35, "i2c_addr");
+    if ( !v59 || *v59 != 3 )
+    {
+      if ( (unsigned int)dword_7EB9C <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get i2c_addr failed\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_71;
+    }
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v61 = sub_4E9C4(v59);
+      snprintf(s, 0x800u, "i2c_addr: %d\n", v61);
+      sub_2E584(4, s, 0);
+    }
+    v60 = (_DWORD *)sub_4E234(v35, "gpio");
+    if ( !v60 || *v60 != 3 )
+    {
+      if ( (unsigned int)dword_7EB9C <= 3 )
+        goto LABEL_10;
+      v39 = "get gpio failed\n";
+      goto LABEL_70;
+    }
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      v62 = sub_4E9C4(v60);
+      snprintf(s, 0x800u, "gpio: %d\n", v62);
+      sub_2E584(4, s, 0);
+    }
+    v63 = (_DWORD *)sub_4E234(v1, "fan");
+    v64 = v63;
+    if ( !v63 )
+    {
+      v65 = dword_7EB9C;
+LABEL_102:
+      if ( v65 <= 3 )
+        goto LABEL_10;
+      strcpy(s, "get fan failed\n");
+      sub_2E584(3, s, 0);
+      goto LABEL_104;
+    }
+    v65 = dword_7EB9C;
+    if ( *v63 != 1 )
+      goto LABEL_102;
+    if ( (unsigned int)dword_7EB9C > 4 )
+    {
+      strcpy(s, "fan:\n");
+      sub_2E584(4, s, 0);
+    }
+    v66 = 0;
+    v67 = 0;
+    v68 = 0;
+    while ( v66 < sub_4E5A0(v64) )
+    {
+      v74 = (_DWORD *)sub_4E5BC(v64, v66);
+      v75 = v74;
+      if ( !v74 || *v74 )
+      {
+        if ( (unsigned int)dword_7EB9C <= 3 )
+          goto LABEL_10;
+        snprintf(s, 0x800u, "get array %d failed\n", v66);
+LABEL_127:
+        sub_2E584(3, s, 0);
+LABEL_104:
+        if ( (unsigned int)dword_7EB9C > 3 )
+        {
+          v2 = -1;
+          strcpy(s, "parse fan failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_11;
+        }
+        goto LABEL_10;
+      }
+      v76 = (_DWORD *)sub_4E234(v74, "id");
+      if ( !v76 || *v76 != 3 )
+      {
+        if ( (unsigned int)dword_7EB9C <= 3 )
+          goto LABEL_10;
+        snprintf(s, 0x800u, "get arrya %d id failed\n", v66);
+        goto LABEL_127;
+      }
+      if ( (unsigned int)dword_7EB9C > 4 )
+      {
+        v77 = sub_4E9C4(v76);
+        snprintf(s, 0x800u, "id: %d\n", v77);
+        sub_2E584(4, s, 0);
+      }
+      v69 = (_DWORD *)sub_4E234(v75, "position");
+      v70 = v69;
+      if ( !v69 || *v69 != 2 )
+      {
+        if ( (unsigned int)dword_7EB9C <= 3 )
+          goto LABEL_10;
+        snprintf(s, 0x800u, "get arrya %d position failed\n", v66);
+        goto LABEL_127;
+      }
+      if ( (unsigned int)dword_7EB9C > 4 )
+      {
+        v78 = (const char *)sub_4E768(v69);
+        snprintf(s, 0x800u, "position: %s\n", v78);
+        sub_2E584(4, s, 0);
+      }
+      v68 = (const char *)sub_4E768(v70);
+      v71 = (_DWORD *)sub_4E234(v75, "direction");
+      v72 = v71;
+      if ( !v71 || *v71 != 2 )
+      {
+        if ( (unsigned int)dword_7EB9C <= 3 )
+          goto LABEL_10;
+        snprintf(s, 0x800u, "get arrya%d direction failed\n", v66);
+        goto LABEL_127;
+      }
+      if ( (unsigned int)dword_7EB9C > 4 )
+      {
+        v73 = (const char *)sub_4E768(v71);
+        snprintf(s, 0x800u, "direction: %s\n", v73);
+        sub_2E584(4, s, 0);
+      }
+      ++v66;
+      v67 = (const char *)sub_4E768(v72);
+      ++dword_58E004;
+    }
+    if ( !strncmp(v68, "right", 5u) )
+    {
+      if ( strncmp(v67, "in", 2u) )
+      {
+        if ( strncmp(v68, "left", 4u) )
+        {
+          if ( strncmp(v67, "out", 2u) )
+          {
+LABEL_138:
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "unkonwn wind position %s, direction %s\n", v68, v67);
+            sub_2E584(3, s, 0);
+            goto LABEL_104;
+          }
+          goto LABEL_143;
+        }
+        if ( strncmp(v67, "out", 2u) )
+          goto LABEL_138;
+      }
+    }
+    else
+    {
+      if ( strncmp(v68, "left", 4u) )
+        goto LABEL_138;
+      if ( strncmp(v67, "out", 2u) )
+      {
+        if ( strncmp(v67, "in", 2u) )
+          goto LABEL_138;
+LABEL_143:
+        dword_58E000 = 1;
+LABEL_144:
+        v79 = (_DWORD *)sub_4E234(v1, "asic");
+        v80 = v79;
+        if ( !v79 )
+        {
+          v81 = dword_7EB9C;
+LABEL_155:
+          if ( v81 <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get asic failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        v81 = dword_7EB9C;
+        if ( *v79 )
+          goto LABEL_155;
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "asic:\n");
+          sub_2E584(4, s, 0);
+        }
+        v82 = (_DWORD *)sub_4E234(v80, "asic_id");
+        if ( !v82 || *v82 != 2 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get asic_id failed\n");
+          sub_2E584(3, s, 0);
+LABEL_153:
+          if ( (unsigned int)dword_7EB9C > 3 )
+          {
+            v2 = -1;
+            strcpy(s, "parse asic failed\n");
+            sub_2E584(3, s, 0);
+            goto LABEL_11;
+          }
+          goto LABEL_10;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v83 = (const char *)sub_4E768(v82);
+          snprintf(s, 0x800u, "asic_id: %s\n", v83);
+          sub_2E584(4, s, 0);
+        }
+        v84 = (_DWORD *)sub_4E234(v80, "asic_addr");
+        v85 = v84;
+        if ( !v84 || *v84 != 2 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get asic_addr failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v98 = (const char *)sub_4E768(v84);
+          snprintf(s, 0x800u, "asic_addr : %s\n", v98);
+          sub_2E584(4, s, 0);
+        }
+        v86 = (const char *)sub_4E768(v85);
+        v87 = strtol(v86, 0, 0);
+        dword_58DFD8 = v87;
+        if ( !v87 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v88 = "convert asic_addr failed\n";
+          goto LABEL_168;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          snprintf(s, 0x800u, "asic_addr 0x%x\n", v87);
+          sub_2E584(4, s, 0);
+        }
+        v96 = (_DWORD *)sub_4E234(v80, "asic_core_num");
+        v97 = v96;
+        if ( !v96 || *v96 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v88 = "get asic_core_num failed\n";
+LABEL_168:
+          v89 = *(_DWORD *)v88;
+          v90 = *((_DWORD *)v88 + 1);
+          v91 = *((_DWORD *)v88 + 2);
+          v92 = *((_DWORD *)v88 + 3);
+          v93 = v88 + 16;
+          *(_DWORD *)s = v89;
+          *(_DWORD *)&s[4] = v90;
+          *(_DWORD *)&s[8] = v91;
+          *(_DWORD *)&s[12] = v92;
+          v94 = v93[1];
+          v95 = v93[2];
+          *(_DWORD *)&s[16] = *v93;
+          *(_DWORD *)&s[20] = v94;
+          *(_WORD *)&s[24] = v95;
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v99 = sub_4E9C4(v96);
+          snprintf(s, 0x800u, "asic_core_num: %d\n", v99);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFDC = sub_4E9C4(v97);
+        v100 = (_DWORD *)sub_4E234(v80, "asic_small_core_num");
+        v101 = v100;
+        if ( !v100 || *v100 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v102 = "get asic_small_core_num failed\n";
+          goto LABEL_183;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v111 = sub_4E9C4(v100);
+          snprintf(s, 0x800u, "asic_small_core_num: %d\n", v111);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFE0 = sub_4E9C4(v101);
+        v112 = (_DWORD *)sub_4E234(v80, "core_small_core_num");
+        v113 = v112;
+        if ( !v112 || *v112 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v102 = "get core_small_core_num failed\n";
+LABEL_183:
+          v103 = *(_DWORD *)v102;
+          v104 = *((_DWORD *)v102 + 1);
+          v105 = *((_DWORD *)v102 + 2);
+          v106 = *((_DWORD *)v102 + 3);
+          v107 = v102 + 16;
+          *(_DWORD *)s = v103;
+          *(_DWORD *)&s[4] = v104;
+          *(_DWORD *)&s[8] = v105;
+          *(_DWORD *)&s[12] = v106;
+          v108 = v107[1];
+          v109 = v107[2];
+          v110 = v107[3];
+          *(_DWORD *)&s[16] = *v107;
+          *(_DWORD *)&s[20] = v108;
+          *(_DWORD *)&s[24] = v109;
+          *(_DWORD *)&s[28] = v110;
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v114 = sub_4E9C4(v112);
+          snprintf(s, 0x800u, "core_small_core_num: %d\n", v114);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFE4 = sub_4E9C4(v113);
+        v115 = (_DWORD *)sub_4E234(v80, "asic_domain_num");
+        v116 = v115;
+        if ( !v115 || *v115 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get asic_domain_num failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v117 = sub_4E9C4(v115);
+          snprintf(s, 0x800u, "asic_domain_num : %d\n", v117);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFE8 = sub_4E9C4(v116);
+        v118 = (_DWORD *)sub_4E234(v80, "asic_addr_interval");
+        v119 = v118;
+        if ( !v118 || *v118 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get asic_addr_interval failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_153;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v120 = sub_4E9C4(v118);
+          snprintf(s, 0x800u, "asic_addr_interval : %d\n", v120);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFEC = sub_4E9C4(v119);
+        v254 = (char *)sub_4E234(v1, "chain");
+        if ( !v254 || *(_DWORD *)v254 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get chain failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "chain:\n");
+          sub_2E584(4, s, 0);
+        }
+        v121 = (_DWORD *)sub_4E234(v254, "chain_num");
+        v122 = v121;
+        if ( !v121 || *v121 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v123 = "get chain_num failed\n";
+          goto LABEL_212;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v132 = sub_4E9C4(v121);
+          snprintf(s, 0x800u, "chain_num : %d\n", v132);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFBC = sub_4E9C4(v122);
+        v130 = (_DWORD *)sub_4E234(v254, "chain_row");
+        v131 = v130;
+        if ( !v130 || *v130 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v123 = "get chain_row failed\n";
+LABEL_212:
+          v124 = *(_DWORD *)v123;
+          v125 = *((_DWORD *)v123 + 1);
+          v126 = *((_DWORD *)v123 + 2);
+          v127 = *((_DWORD *)v123 + 3);
+          v128 = v123 + 16;
+          *(_DWORD *)s = v124;
+          *(_DWORD *)&s[4] = v125;
+          *(_DWORD *)&s[8] = v126;
+          *(_DWORD *)&s[12] = v127;
+          v129 = v128[1];
+          *(_DWORD *)&s[16] = *v128;
+          *(_WORD *)&s[20] = v129;
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v133 = sub_4E9C4(v130);
+          snprintf(s, 0x800u, "chain_row: %d\n", v133);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFC0 = sub_4E9C4(v131);
+        v134 = (_DWORD *)sub_4E234(v254, "chain_column");
+        v135 = v134;
+        if ( !v134 || *v134 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get chain_column failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v136 = sub_4E9C4(v134);
+          snprintf(s, 0x800u, "chain_column: %d\n", v136);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFC4 = sub_4E9C4(v135);
+        v137 = (_DWORD *)sub_4E234(v254, "chain_domain_num");
+        v138 = v137;
+        if ( !v137 || *v137 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get chain_domain_num failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v139 = sub_4E9C4(v137);
+          snprintf(s, 0x800u, "chain_domain_num : %d\n", v139);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFC8 = sub_4E9C4(v138);
+        v140 = (_DWORD *)sub_4E234(v254, "chain_asic_num");
+        v141 = v140;
+        if ( !v140 || *v140 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v142 = "get chain_asic_num failed\n";
+          goto LABEL_241;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v150 = sub_4E9C4(v140);
+          snprintf(s, 0x800u, "chain_asic_num : %d\n", v150);
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFCC = sub_4E9C4(v141);
+        v151 = (_DWORD *)sub_4E234(v254, "domain_asic_num");
+        v152 = v151;
+        if ( !v151 || *v151 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get domain_asic_num failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v153 = sub_4E9C4(v151);
+          snprintf(s, 0x800u, "domain_asic_num : %d\n", v153);
+          sub_2E584(4, s, 0);
+        }
+        v154 = sub_4E9C4(v152);
+        v155 = v154;
+        dword_58DFD0 = v154;
+        v156 = dword_58DFBC;
+        v157 = dword_58DFC8;
+        v158 = dword_58DFCC;
+        if ( (unsigned int)dword_7EB9C > 3 )
+        {
+          snprintf(
+            s,
+            0x800u,
+            "chain_num %d, chain_domain_num %d, chain_asic_num %d, domain_asic_num %d\n",
+            dword_58DFBC,
+            dword_58DFC8,
+            dword_58DFCC,
+            v154);
+          sub_2E584(3, s, 0);
+        }
+        dword_58DFF0 = (int)calloc(v156, 0x14u);
+        if ( !dword_58DFF0 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          snprintf(s, 0x800u, "malloc %d chain_t failed\n", v156);
+          goto LABEL_262;
+        }
+        v159 = v157;
+        format = (char *)(28 * v155);
+        v160 = 0;
+        v259 = (char *)(-28 * v155);
+        while ( v156 > v160 )
+        {
+          v161 = dword_58DFF0;
+          *(_DWORD *)(dword_58DFF0 + 20 * v160) = v160;
+          v162 = v161 + 20 * v160;
+          v163 = calloc(v159, 8u);
+          *(_DWORD *)(v162 + 12) = v163;
+          if ( !v163 )
+          {
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "malloc %d domain_t failed\n", v159);
+LABEL_262:
+            sub_2E584(3, s, 0);
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            strcpy(s, "alloc topol failed\n");
+            sub_2E584(3, s, 0);
+            goto LABEL_213;
+          }
+          v164 = calloc(v158, 0x1Cu);
+          *(_DWORD *)(v162 + 8) = v164;
+          if ( !v164 )
+          {
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "malloc %d asic_t failed\n", v158);
+            goto LABEL_262;
+          }
+          v165 = 0;
+          for ( i = 0; ; ++i )
+          {
+            v165 += (int)format;
+            if ( v159 <= i )
+              break;
+            v167 = *(_DWORD *)(v162 + 12);
+            *(_DWORD *)(v167 + 8 * i) = i;
+            v168 = v167 + 8 * i;
+            *(_DWORD *)(v168 + 4) = &v259[v165 + *(_DWORD *)(v162 + 8)];
+          }
+          ++v160;
+        }
+        v169 = (_DWORD *)sub_4E234(v254, "pic");
+        v170 = v169;
+        if ( !v169 || *v169 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get pic failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_273;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "pic:\n");
+          sub_2E584(4, s, 0);
+        }
+        v171 = (_DWORD *)sub_4E234(v170, "type");
+        if ( !v171 || *v171 != 2 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get type failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_273;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v172 = (const char *)sub_4E768(v171);
+          snprintf(s, 0x800u, "type: %s\n", v172);
+          sub_2E584(4, s, 0);
+        }
+        v173 = (_DWORD *)sub_4E234(v170, "i2c_addr");
+        if ( !v173 || *v173 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get i2c_addr failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_273;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v174 = sub_4E9C4(v173);
+          snprintf(s, 0x800u, "i2c_addr: %d\n", v174);
+          sub_2E584(4, s, 0);
+        }
+        v175 = (_DWORD *)sub_4E234(v170, "sensor");
+        v176 = v175;
+        if ( v175 && *v175 == 1 )
+        {
+          if ( (unsigned int)dword_7EB9C > 4 )
+          {
+            strcpy(s, "pic sensor:\n");
+            sub_2E584(4, s, 0);
+          }
+          dword_58DFF8 = sub_4E5A0(v176);
+          v178 = sub_4E5A0(v176);
+          dword_58DFFC = (int)calloc(v178, 0xCu);
+          if ( dword_58DFFC )
+          {
+            for ( j = 0; ; ++j )
+            {
+              if ( j >= sub_4E5A0(v176) )
+                goto LABEL_338;
+              v180 = (_DWORD *)sub_4E5BC(v176, j);
+              v181 = v180;
+              if ( !v180 || *v180 )
+              {
+                if ( (unsigned int)dword_7EB9C <= 3 )
+                  goto LABEL_10;
+                snprintf(s, 0x800u, "get array %d failed\n", j);
+                goto LABEL_327;
+              }
+              v182 = (_DWORD *)sub_4E234(v180, "index");
+              v183 = v182;
+              if ( !v182 || *v182 != 3 )
+              {
+                if ( (unsigned int)dword_7EB9C <= 3 )
+                  goto LABEL_10;
+                snprintf(s, 0x800u, "get array %d index failed\n", j);
+                goto LABEL_327;
+              }
+              if ( (unsigned int)dword_7EB9C > 4 )
+              {
+                v184 = sub_4E9C4(v182);
+                snprintf(s, 0x800u, "index: %d\n", v184);
+                sub_2E584(4, s, 0);
+              }
+              v260 = dword_58DFFC;
+              v185 = 12 * sub_4E9C4(v183);
+              *(_DWORD *)(v260 + v185) = sub_4E9C4(v183);
+              v186 = v260 + v185;
+              v187 = (_DWORD *)sub_4E234(v181, "type");
+              if ( !v187 || *v187 != 2 )
+              {
+                if ( (unsigned int)dword_7EB9C <= 3 )
+                  goto LABEL_10;
+                snprintf(s, 0x800u, "get array %d type failed\n", j);
+                goto LABEL_327;
+              }
+              if ( (unsigned int)dword_7EB9C > 4 )
+              {
+                v188 = (const char *)sub_4E768(v187);
+                snprintf(s, 0x800u, "type: %s\n", v188);
+                sub_2E584(4, s, 0);
+              }
+              v189 = (_DWORD *)sub_4E234(v181, "iic");
+              v190 = v189;
+              if ( !v189 || *v189 != 3 )
+              {
+                if ( (unsigned int)dword_7EB9C <= 3 )
+                  goto LABEL_10;
+                snprintf(s, 0x800u, "get array %d bind_asic failed\n", j);
+                goto LABEL_327;
+              }
+              if ( (unsigned int)dword_7EB9C > 4 )
+              {
+                v191 = sub_4E9C4(v189);
+                snprintf(s, 0x800u, "iic: %d\n", v191);
+                sub_2E584(4, s, 0);
+              }
+              *(_DWORD *)(v186 + 4) = sub_4E9C4(v190);
+              v192 = (_DWORD *)sub_4E234(v181, "x");
+              v193 = v192;
+              if ( !v192 || *v192 != 2 )
+                break;
+              if ( (unsigned int)dword_7EB9C > 4 )
+              {
+                v194 = (const char *)sub_4E768(v192);
+                snprintf(s, 0x800u, "x: %s\n", v194);
+                sub_2E584(4, s, 0);
+              }
+              if ( !dword_58E000 )
+              {
+                v195 = (const char *)sub_4E768(v193);
+                v196 = strncasecmp(v195, "right", 5u);
+                if ( v196 )
+                  *(_BYTE *)(v186 + 8) = 0;
+                else
+                  v197 = 1;
+                if ( !v196 )
+                  *(_BYTE *)(v186 + 8) = v197;
+              }
+            }
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "get array %d x failed\n", j);
+LABEL_327:
+            sub_2E584(3, s, 0);
+          }
+          else
+          {
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            v198 = sub_4E5A0(v176);
+            snprintf(s, 0x800u, "malloc %d sensor_t failed\n", v198);
+            sub_2E584(3, s, 0);
+          }
+LABEL_273:
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "parse chain pic failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_213;
+        }
+        v177 = (const char *)dword_58DFB8;
+        if ( strcmp((const char *)dword_58DFB8, "BHB28601") && strcmp(v177, "BHB28501") )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get pic sensor failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_273;
+        }
+LABEL_338:
+        v199 = (_DWORD *)sub_4E234(v254, "eeprom");
+        v200 = v199;
+        if ( !v199 || *v199 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get eeprom failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_342;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "eeprom:\n");
+          sub_2E584(4, s, 0);
+        }
+        v201 = (_DWORD *)sub_4E234(v200, "type");
+        if ( !v201 || *v201 != 2 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get type failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_342;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v202 = (const char *)sub_4E768(v201);
+          snprintf(s, 0x800u, "type: %s\n", v202);
+          sub_2E584(4, s, 0);
+        }
+        v203 = (_DWORD *)sub_4E234(v200, "i2c_addr");
+        if ( !v203 || *v203 != 3 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get i2c_addr failed\n");
+          sub_2E584(3, s, 0);
+LABEL_342:
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v142 = "parse chain eeprom failed\n";
+          goto LABEL_241;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          v204 = sub_4E9C4(v203);
+          snprintf(s, 0x800u, "i2c_addr: %d\n", v204);
+          sub_2E584(4, s, 0);
+        }
+        v205 = (_DWORD *)sub_4E234(v254, "sensor");
+        v206 = v205;
+        if ( !v205 || *v205 != 1 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get sensor failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_362;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "sensor:\n");
+          sub_2E584(4, s, 0);
+        }
+        dword_58DFD4 = sub_4E5A0(v206);
+        v207 = sub_4E5A0(v206);
+        dword_58DFF4 = (int)calloc(v207, 0xCu);
+        if ( !dword_58DFF4 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v221 = sub_4E5A0(v206);
+          snprintf(s, 0x800u, "malloc %d sensor_t failed\n", v221);
+          sub_2E584(3, s, 0);
+          goto LABEL_362;
+        }
+        for ( k = 0; k < sub_4E5A0(v206); ++k )
+        {
+          v209 = (_DWORD *)sub_4E5BC(v206, k);
+          v210 = v209;
+          if ( !v209 || *v209 )
+          {
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "get array %d failed\n", k);
+            goto LABEL_386;
+          }
+          v211 = (_DWORD *)sub_4E234(v209, "index");
+          v212 = v211;
+          if ( !v211 || *v211 != 3 )
+          {
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "get array %d index failed\n", k);
+LABEL_386:
+            sub_2E584(3, s, 0);
+LABEL_362:
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            v142 = "parse chain sensor failed\n";
+LABEL_241:
+            v143 = *(_DWORD *)v142;
+            v144 = *((_DWORD *)v142 + 1);
+            v145 = *((_DWORD *)v142 + 2);
+            v146 = *((_DWORD *)v142 + 3);
+            v147 = v142 + 16;
+            *(_DWORD *)s = v143;
+            *(_DWORD *)&s[4] = v144;
+            *(_DWORD *)&s[8] = v145;
+            *(_DWORD *)&s[12] = v146;
+            v148 = v147[1];
+            v149 = v147[2];
+            *(_DWORD *)&s[16] = *v147;
+            *(_DWORD *)&s[20] = v148;
+            *(_WORD *)&s[24] = v149;
+            s[26] = BYTE2(v149);
+            sub_2E584(3, s, 0);
+LABEL_213:
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            v45 = "parse chain failed\n";
+LABEL_73:
+            v46 = *(_DWORD *)v45;
+            v47 = *((_DWORD *)v45 + 1);
+            v48 = *((_DWORD *)v45 + 2);
+            v49 = *((_DWORD *)v45 + 3);
+            v2 = -1;
+            v50 = *((_DWORD *)v45 + 4);
+            *(_DWORD *)s = v46;
+            *(_DWORD *)&s[4] = v47;
+            *(_DWORD *)&s[8] = v48;
+            *(_DWORD *)&s[12] = v49;
+            *(_DWORD *)&s[16] = v50;
+            sub_2E584(3, s, 0);
+            goto LABEL_11;
+          }
+          if ( (unsigned int)dword_7EB9C > 4 )
+          {
+            v213 = sub_4E9C4(v211);
+            snprintf(s, 0x800u, "index: %d\n", v213);
+            sub_2E584(4, s, 0);
+          }
+          v214 = dword_58DFF4;
+          v215 = v214 + 12 * sub_4E9C4(v212);
+          v216 = (_DWORD *)sub_4E234(v210, "type");
+          if ( !v216 || *v216 != 2 )
+          {
+            if ( (unsigned int)dword_7EB9C > 3 )
+            {
+              snprintf(s, 0x800u, "get array %d type failed\n", k);
+              goto LABEL_386;
+            }
+            goto LABEL_10;
+          }
+          if ( (unsigned int)dword_7EB9C > 4 )
+          {
+            v217 = (const char *)sub_4E768(v216);
+            snprintf(s, 0x800u, "type: %s\n", v217);
+            sub_2E584(4, s, 0);
+          }
+          v218 = (_DWORD *)sub_4E234(v210, "bind_asic");
+          v219 = v218;
+          if ( !v218 || *v218 != 3 )
+          {
+            if ( (unsigned int)dword_7EB9C > 3 )
+            {
+              snprintf(s, 0x800u, "get array %d bind_asic failed\n", k);
+              goto LABEL_386;
+            }
+            goto LABEL_10;
+          }
+          if ( (unsigned int)dword_7EB9C > 4 )
+          {
+            v220 = sub_4E9C4(v218);
+            snprintf(s, 0x800u, "bind_asic: %d\n", v220);
+            sub_2E584(4, s, 0);
+          }
+          *(_DWORD *)(v215 + 4) = sub_4E9C4(v219);
+        }
+        formata = (char *)sub_4E234(v254, "domain");
+        if ( !formata || *(_DWORD *)formata != 1 )
+        {
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          strcpy(s, "get domain failed\n");
+          sub_2E584(3, s, 0);
+          goto LABEL_397;
+        }
+        if ( (unsigned int)dword_7EB9C > 4 )
+        {
+          strcpy(s, "domain:\n");
+          sub_2E584(4, s, 0);
+        }
+        v222 = 0;
+        v255 = v1;
+LABEL_404:
+        if ( v222 < sub_4E5A0(formata) )
+        {
+          v223 = (_DWORD *)sub_4E5BC(formata, v222);
+          v224 = v223;
+          if ( !v223 || *v223 )
+          {
+            v1 = v255;
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "get array %d failed\n", v222);
+          }
+          else
+          {
+            v225 = (_DWORD *)sub_4E234(v223, "index");
+            if ( v225 && *v225 == 3 )
+            {
+              if ( (unsigned int)dword_7EB9C > 4 )
+              {
+                v226 = sub_4E9C4(v225);
+                snprintf(s, 0x800u, "index: %d\n", v226);
+                sub_2E584(4, s, 0);
+              }
+              v227 = (_DWORD *)sub_4E234(v224, "asic");
+              v228 = v227;
+              if ( v227 && *v227 == 1 )
+              {
+                if ( (unsigned int)dword_7EB9C > 4 )
+                {
+                  strcpy(s, "asic:\n");
+                  sub_2E584(4, s, 0);
+                }
+                for ( m = 0; ; ++m )
+                {
+                  if ( m >= sub_4E5A0(v228) )
+                  {
+                    ++v222;
+                    goto LABEL_404;
+                  }
+                  v233 = (_DWORD *)sub_4E5BC(v228, m);
+                  v234 = v233;
+                  if ( !v233 || *v233 )
+                  {
+                    v1 = v255;
+                    if ( (unsigned int)dword_7EB9C > 3 )
+                    {
+                      snprintf(s, 0x800u, "get array %d failed\n", m);
+                      goto LABEL_448;
+                    }
+                    goto LABEL_10;
+                  }
+                  v235 = (_DWORD *)sub_4E234(v233, "index");
+                  v236 = v235;
+                  if ( !v235 || *v235 != 3 )
+                  {
+                    v1 = v255;
+                    if ( (unsigned int)dword_7EB9C > 3 )
+                    {
+                      snprintf(s, 0x800u, "get array %d index failed\n", m);
+                      goto LABEL_448;
+                    }
+                    goto LABEL_10;
+                  }
+                  if ( (unsigned int)dword_7EB9C > 4 )
+                  {
+                    v237 = sub_4E9C4(v235);
+                    snprintf(s, 0x800u, "index: %d\n", v237);
+                    sub_2E584(4, s, 0);
+                  }
+                  v238 = sub_4E9C4(v236);
+                  v239 = v234;
+                  v240 = *(_DWORD *)(dword_58DFF0 + 8);
+                  *(_DWORD *)(v240 + 28 * v238) = v238;
+                  v241 = v240 + 28 * v238;
+                  v242 = (_DWORD *)sub_4E234(v239, "coordinate");
+                  v243 = v242;
+                  if ( !v242 || *v242 != 1 )
+                    break;
+                  v244 = (_DWORD *)sub_4E5BC(v242, 0);
+                  v245 = v244;
+                  if ( !v244 || *v244 != 3 )
+                  {
+                    v1 = v255;
+                    if ( (unsigned int)dword_7EB9C > 3 )
+                    {
+                      snprintf(s, 0x800u, "get array %d coordinate x failed\n", m);
+LABEL_448:
+                      sub_2E584(3, s, 0);
+                      goto LABEL_415;
+                    }
+                    goto LABEL_10;
+                  }
+                  if ( (unsigned int)dword_7EB9C > 4 )
+                  {
+                    v246 = sub_4E9C4(v244);
+                    snprintf(s, 0x800u, "x: %d\n", v246);
+                    sub_2E584(4, s, 0);
+                  }
+                  *(_DWORD *)(v241 + 4) = sub_4E9C4(v245);
+                  v247 = (_DWORD *)sub_4E5BC(v243, 1);
+                  v248 = v247;
+                  if ( !v247 || *v247 != 3 )
+                  {
+                    v1 = v255;
+                    if ( (unsigned int)dword_7EB9C <= 3 )
+                      goto LABEL_10;
+                    snprintf(s, 0x800u, "get array %d coordinate y failed\n", m);
+                    goto LABEL_448;
+                  }
+                  if ( (unsigned int)dword_7EB9C > 4 )
+                  {
+                    v249 = sub_4E9C4(v247);
+                    snprintf(s, 0x800u, "y: %d\n", v249);
+                    sub_2E584(4, s, 0);
+                  }
+                  *(_DWORD *)(v241 + 8) = sub_4E9C4(v248);
+                }
+                v1 = v255;
+                if ( (unsigned int)dword_7EB9C > 3 )
+                {
+                  snprintf(s, 0x800u, "get array %d coordinate failed\n", m);
+                  goto LABEL_448;
+                }
+                goto LABEL_10;
+              }
+              v1 = v255;
+              if ( (unsigned int)dword_7EB9C <= 3 )
+                goto LABEL_10;
+              strcpy(s, "get asic failed\n");
+              sub_2E584(3, s, 0);
+LABEL_415:
+              if ( (unsigned int)dword_7EB9C <= 3 )
+              {
+LABEL_10:
+                v2 = -1;
+                goto LABEL_11;
+              }
+              snprintf(s, 0x800u, "parse arrry %d asic failed\n", v222);
+              sub_2E584(3, s, 0);
+              goto LABEL_397;
+            }
+            v1 = v255;
+            if ( (unsigned int)dword_7EB9C <= 3 )
+              goto LABEL_10;
+            snprintf(s, 0x800u, "get array %d index failed\n", v222);
+          }
+          sub_2E584(3, s, 0);
+LABEL_397:
+          if ( (unsigned int)dword_7EB9C <= 3 )
+            goto LABEL_10;
+          v142 = "parse chain domain failed\n";
+          goto LABEL_241;
+        }
+        v229 = 1;
+        v1 = v255;
+        v230 = *(const void **)(dword_58DFF0 + 8);
+        while ( v229 < dword_58DFBC )
+        {
+          v231 = dword_58DFF0 + 20 * v229++;
+          memcpy(*(void **)(v231 + 8), v230, 28 * dword_58DFCC);
+        }
+        for ( n = 0; ; ++n )
+        {
+          if ( n >= dword_58DFD4 )
+          {
+            v2 = sub_1B398();
+            if ( v2 && (unsigned int)dword_7EB9C > 3 )
+            {
+              strcpy(s, "init topol runtime failed\n");
+              sub_2E584(3, s, 0);
+            }
+LABEL_11:
+            if ( *((_DWORD *)v1 + 1) != -1 )
+            {
+              v6 = (unsigned int *)(v1 + 4);
+              __dmb(0xBu);
+              do
+              {
+                v7 = __ldrex(v6);
+                v8 = v7 - 1;
+              }
+              while ( __strex(v8, v6) );
+              if ( !v8 )
+                sub_4EB6C(v1);
+            }
+            return v2;
+          }
+          v251 = dword_58DFF4 + 12 * n;
+          v252 = *(_DWORD *)(dword_58DFF0 + 8) + 28 * *(_DWORD *)(v251 + 4);
+          if ( (unsigned int)dword_7EB9C > 3 )
+          {
+            snprintf(s, 0x800u, "asic %d, wind %d, y %d\n");
+            sub_2E584(3, s, 0);
+          }
+          v253 = dword_58E000;
+          if ( dword_58E000 != 1 )
+            break;
+          if ( *(_DWORD *)(v252 + 8) > dword_58DFC4 / 3 )
+            goto LABEL_472;
+          if ( (unsigned int)dword_7EB9C > 3 )
+          {
+            formatb = dword_58E000;
+            strcpy(s, "air in\n");
+            sub_2E584(3, s, 0);
+            v253 = formatb;
+          }
+LABEL_468:
+          *(_BYTE *)(v251 + 8) = v253;
+        }
+        if ( !dword_58E000 && *(_DWORD *)(v252 + 8) >= 2 * dword_58DFC4 / 3 )
+        {
+          if ( (unsigned int)dword_7EB9C > 3 )
+          {
+            strcpy(s, "air in\n");
+            sub_2E584(3, s, dword_58E000);
+          }
+          v253 = 1;
+          goto LABEL_468;
+        }
+LABEL_472:
+        if ( (unsigned int)dword_7EB9C > 3 )
+        {
+          strcpy(s, "air out\n");
+          sub_2E584(3, s, 0);
+        }
+        v253 = 0;
+        goto LABEL_468;
+      }
+    }
+    dword_58E000 = 0;
+    goto LABEL_144;
+  }
+  if ( (unsigned int)dword_7EB9C <= 3 )
+    return -1;
+  snprintf(s, 0x800u, "load topol config file %s failed\n", "/etc/topol.conf");
+  sub_2E584(3, s, 0);
+  return -1;
+}
