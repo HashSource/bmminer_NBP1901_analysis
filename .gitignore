@@ -6,3 +6,8 @@ decompile.log
 decompilations/bmminer/*
 !decompilations/bmminer/FUN_*-*.c
 !decompilations/bmminer/FUN_*-*.md
+
+# IDA Pro
+bmminer.id*
+bmminer.nam
+bmminer.til
