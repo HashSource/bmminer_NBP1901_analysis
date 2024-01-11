@@ -9,7 +9,7 @@ chmod +x ./cgminer
 # Using libraies from unpacked FW
 
 # Open Socket Using bmminer
-qemu-arm -L /home/danielsokil/Downloads/Antminer-FW-Peek/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./bmminer
+qemu-arm -L /home/danielsokil/Lab/Zetta-Pow/Antminer-Firmware-Internals/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./bmminer
 
 # Cgminer will attempt to open the bmminer socket
-qemu-arm -L /home/danielsokil/Downloads/Antminer-FW-Peek/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./cgminer
+qemu-arm -L /home/danielsokil/Lab/Zetta-Pow/Antminer-Firmware-Internals/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./cgminer
