@@ -41,7 +41,7 @@ with open("bmminer","r+b") as f:
     ## patching 2 times voltage
     f.write(bytes(voltage_opcode)) # mov r2, voltage
     f.write(bytes(voltage_opcode)) # mov r2, voltage
-    
+
     f.seek(frequency_offset_1)
     f.write(bytes(frequency_opcode)) # mov r0. frequency
 
