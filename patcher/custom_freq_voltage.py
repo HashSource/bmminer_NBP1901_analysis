@@ -36,7 +36,7 @@ print(voltage_opcode)
 
 
 ## write changes to file
-with open("bmminer","r+b") as f:
+with open("bmminer_no_fan_check","r+b") as f:
     f.seek(voltage_offset_1)
     ## patching 2 times voltage
     f.write(bytes(voltage_opcode)) # mov r2, voltage
