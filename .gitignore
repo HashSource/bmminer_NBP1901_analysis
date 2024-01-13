@@ -2,6 +2,7 @@
 .symbols
 .ghidra_projects
 decompile.log
+.mypy_cache
 
 decompilations/bmminer/*
 !decompilations/bmminer/FUN_*-*.c
