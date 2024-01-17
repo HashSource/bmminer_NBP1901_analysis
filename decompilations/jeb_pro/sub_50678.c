@@ -1,0 +1,10 @@
+int sub_50678(int param0, char* param1, int param2, int param3) {
+    char v0;
+    if((uint32_t)param1 <= 3) {
+        int v1 = (int)*(param1 + 436544);
+        sub_51A20(0, param0, 0, v1, &v0);
+        v0 = (uint8_t)((uint32_t)(uint8_t)(param3 & 0x7) | ((uint32_t)(((uint32_t)(((v0 & 0xf) >>> 3) & SOCK_STREAM) | ((uint32_t)(uint8_t)(param2 & 0x7) << SOCK_STREAM) | ((uint32_t)((v0 >>> 7) & 0x1ffffff) << 4) | ((uint32_t)0 << 29)) & 0x1FFFFFFF) << 3));
+        return sub_4FA10(param0, SOCK_STREAM, 0, v1, v0);
+    }
+    return -1;
+}

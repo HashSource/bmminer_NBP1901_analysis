@@ -4,10 +4,6 @@
 decompile.log
 .mypy_cache
 
-decompilations/bmminer/*
-!decompilations/bmminer/FUN_*-*.c
-!decompilations/bmminer/FUN_*-*.md
-
 # IDA Pro
 bmminer.id*
 bmminer.nam

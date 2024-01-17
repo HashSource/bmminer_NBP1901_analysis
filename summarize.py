@@ -16,7 +16,7 @@ default_prompt = [
     }
 ]
 
-source_file_paths = glob.glob("decompilations/bmminer/FUN_*-*.c")
+source_file_paths = glob.glob("decompilations/ghidra/FUN_*-*.c")
 for index, source_file_path in enumerate(source_file_paths):
     output_file_path = Path(source_file_path).with_suffix(".md")
     output_file_exists = os.path.isfile(output_file_path)

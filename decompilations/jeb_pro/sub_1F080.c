@@ -1,0 +1,19 @@
+int sub_1F080(int param0, int param1) {
+    char v0;
+    short v1;
+    uint8_t v2;
+    uint8_t v3;
+    uint8_t v4;
+    __int128 v5;
+    *(int*)&v0 = param0;
+    *(int*)&v1 = param1;
+    __int128 v6 = (unsigned __int128)(((unsigned __int128)25.0 | ((unsigned __int128)((v5 >>> 0x20X) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) << 32)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)v2 << 96);
+    VCVT.F32.S32((uint32_t)(v6 >>> 0x60X), (uint32_t)(v6 >>> 0x60X));
+    VDIV.F32((uint32_t)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) >>> 0x20X), (uint32_t)((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)), (uint32_t)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) >>> 0x60X));
+    VCVT.F32.S32((uint32_t)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) >>> 0x40X), (uint32_t)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) >>> 0x40X));
+    VCVT.F32.S32((uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x60X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x60X));
+    VMUL.F32((uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x40X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x20X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x40X));
+    VDIV.F32((uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x20X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x40X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x60X));
+    VCVT.S32.F32((uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x60X), (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x20X));
+    return (uint32_t)(((unsigned __int128)(((unsigned __int128)(uint64_t)v6 | ((unsigned __int128)v1 << 64) | ((unsigned __int128)(uint32_t)(v6 >>> 0x60X) << 96)) & 0xFFFFFFFFFFFFFFFFFFFFFFFFX) | ((unsigned __int128)(v0 * v4 * v3) << 96)) >>> 0x60X);
+}
