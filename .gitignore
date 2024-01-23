@@ -1,12 +1,4 @@
 .env
 .symbols
-.ghidra_projects
 decompile.log
 .mypy_cache
-
-# IDA Pro / Ghidra / JEB Pro
-bmminer.id*
-bmminer.nam
-bmminer.til
-bmminer.idb
-bmminer.jdb2
