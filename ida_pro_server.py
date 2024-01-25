@@ -4,6 +4,7 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 import openai
 import time
 from decouple import config
+from datetime import datetime
 
 openai.api_key = config("OPEN_AI_API_KEY")
 
@@ -45,8 +46,13 @@ def request_gpt_enhancement(decompiled_function):
 
 class IdaProRequestHandler(BaseHTTPRequestHandler):
     def do_POST(self):
+        now = datetime.now()
+        current_time = now.strftime("%H:%M:%S")
+        print(f"Start Time: {current_time}")
+
         content_length = int(self.headers["Content-Length"])
         request_data = self.rfile.read(content_length).decode("utf-8")
+        print(f"Function Size: {content_length}")
 
         gpt_start_time = time.time()
         gpt_response = request_gpt_enhancement(request_data)
