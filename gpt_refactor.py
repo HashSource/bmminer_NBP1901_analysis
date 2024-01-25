@@ -19,7 +19,7 @@ default_prompt = [
 source_file_paths = glob.glob("decompilations/ida_pro/sub_*.c")
 
 
-def summary_source_file(source_file_path):
+def refactor_source_file(source_file_path):
     output_file_path = Path(source_file_path).with_suffix(".md")
     output_file_exists = os.path.isfile(output_file_path)
 
@@ -30,7 +30,7 @@ def summary_source_file(source_file_path):
     with open(source_file_path, "r") as source_file:
         source = source_file.read()
 
-        print(f"{output_file_path}: Summarizing")
+        print(f"{output_file_path}: Refactoring")
 
         messages = default_prompt + [
             {
@@ -50,4 +50,4 @@ def summary_source_file(source_file_path):
 
 
 with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-    executor.map(summary_source_file, source_file_paths)
+    executor.map(refactor_source_file, source_file_paths)
