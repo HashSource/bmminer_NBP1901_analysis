@@ -1,0 +1,8 @@
+{
+  "sub_323DC": "print_chain_versions",
+  "i": "chain_index",
+  "result": "last_result",
+  "PCBVersionForChain": "pcb_version",
+  "ChainBomVersion": "bom_version",
+  "s": "log_buffer"
+}
