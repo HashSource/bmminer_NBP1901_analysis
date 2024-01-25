@@ -101,6 +101,7 @@ for func_map in FUNC_STRINGS_COUNT_SORTED:
         mapping = send_refactor_request(cfunc_string)
         if mapping is not None:
             json_map = json.loads(mapping)
+            print(json_map)
 
             # Rename Function
             new_function_name = json_map[func_name]
