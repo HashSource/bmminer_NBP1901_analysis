@@ -60,7 +60,7 @@ for func_ea in binary_functions:
 
 # print("Sort Mapping By Functions With Highest String Count")
 FUNC_STRINGS_COUNT_SORTED = sorted(
-    FUNC_STRINGS_COUNT, key=lambda mapping: mapping["func_string_count"]
+    FUNC_STRINGS_COUNT, key=lambda mapping: mapping["func_string_count"], reverse=True
 )
 
 total_functions_to_process = 0
