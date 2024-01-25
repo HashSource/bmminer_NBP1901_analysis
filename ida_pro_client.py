@@ -63,6 +63,17 @@ FUNC_STRINGS_COUNT_SORTED = sorted(
     FUNC_STRINGS_COUNT, key=lambda mapping: mapping["func_string_count"]
 )
 
+total_functions_to_process = 0
+for func_map in FUNC_STRINGS_COUNT_SORTED:
+    func_ea = func_map["func_ea"]
+    func_name = idc.get_func_name(func_ea)
+
+    if "sub_" in func_name:
+        total_functions_to_process += 1
+    else:
+        continue
+print(f"Total Functions To Process {total_functions_to_process}")
+
 print("Processing Functions")
 for func_map in FUNC_STRINGS_COUNT_SORTED:
     func_ea = func_map["func_ea"]
