@@ -37,7 +37,7 @@ def request_gpt_enhancement(decompiled_function):
     ]
 
     chat_gpt = openai.ChatCompletion.create(
-        model="gpt-4-1106-preview", messages=messages
+        model="gpt-4-turbo-preview", messages=messages
     )
     chat_gpt_reply = chat_gpt.choices[0].message.content
 
