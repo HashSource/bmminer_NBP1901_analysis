@@ -2,6 +2,7 @@
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
 import openai
+import time
 from decouple import config
 
 openai.api_key = config("OPEN_AI_API_KEY")
@@ -47,7 +48,10 @@ class IdaProRequestHandler(BaseHTTPRequestHandler):
         content_length = int(self.headers["Content-Length"])
         request_data = self.rfile.read(content_length).decode("utf-8")
 
+        gpt_start_time = time.time()
         gpt_response = request_gpt_enhancement(request_data)
+        gpt_end_time = time.time()
+        print(f"GPT Enhancement Took: {round(gpt_end_time - gpt_start_time)} Seconds")
 
         response = gpt_response.encode("utf-8")
 
