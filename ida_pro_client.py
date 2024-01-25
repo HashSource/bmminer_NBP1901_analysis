@@ -92,6 +92,7 @@ for func_map in FUNC_STRINGS_COUNT_SORTED:
         func_lvar_count = len(cfunc.get_lvars())
         if func_lvar_count == 0:
             print(f"Skipping Func: {func_name} - No Local Variables")
+            continue
 
         ida_hexrays.init_hexrays_plugin()
         vdui = ida_hexrays.open_pseudocode(func_ea, 0)
