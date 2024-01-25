@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 
 from http.server import HTTPServer, BaseHTTPRequestHandler
-import openai
+from openai import OpenAI
 import time
 from decouple import config
 from datetime import datetime
 
-openai.api_key = config("OPEN_AI_API_KEY")
+openai_client = OpenAI(
+    api_key=config("OPEN_AI_API_KEY"),
+    # 60 seconds
+    timeout=60.0,
+)
 
 default_gpt_prompt = [
     {
@@ -36,12 +40,12 @@ def request_gpt_enhancement(decompiled_function):
         }
     ]
 
-    chat_gpt = openai.ChatCompletion.create(
+    gpt = openai_client.chat.completions.create(
         model="gpt-4-turbo-preview", messages=messages
     )
-    chat_gpt_reply = chat_gpt.choices[0].message.content
+    gpt_reply = gpt.choices[0].message.content
 
-    return chat_gpt_reply
+    return gpt_reply
 
 
 class IdaProRequestHandler(BaseHTTPRequestHandler):
