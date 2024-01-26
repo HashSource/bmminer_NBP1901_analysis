@@ -7,9 +7,8 @@ from decouple import config
 from datetime import datetime
 
 openai_client = OpenAI(
-    api_key=config("OPEN_AI_API_KEY"),
-    # 60 seconds
-    timeout=60.0,
+    api_key=config("OPEN_AI_API_KEY"),  # Loads from .env file
+    timeout=180,  # Seconds
 )
 
 default_gpt_prompt = [
