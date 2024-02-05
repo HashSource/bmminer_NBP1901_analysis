@@ -12,7 +12,7 @@ def ida_func_string_count(func_ea):
     func = idaapi.get_func(func_ea)
     if not func:
         print(f"Function at {hex(func_ea)} is not found.")
-        return
+        return None
 
     function_string_count = 0
 
@@ -55,8 +55,9 @@ FUNC_STRINGS_COUNT = []
 print("Get The String Count Of All Functions")
 for func_ea in binary_functions:
     func_string_count = ida_func_string_count(func_ea)
-    func_map = {"func_ea": func_ea, "func_string_count": func_string_count}
-    FUNC_STRINGS_COUNT.append(func_map)
+    if func_string_count is not None:
+        func_map = {"func_ea": func_ea, "func_string_count": func_string_count}
+        FUNC_STRINGS_COUNT.append(func_map)
 
 # print("Sort Mapping By Functions With Highest String Count")
 FUNC_STRINGS_COUNT_SORTED = sorted(

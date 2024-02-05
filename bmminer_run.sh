@@ -8,6 +8,9 @@ chmod +x ./cgminer
 
 # Using libraies from unpacked FW
 
+# Emulate bmminer Port
+nc -l 22026
+
 # Open Socket Using bmminer
 qemu-arm -L /home/danielsokil/Lab/Zetta-Pow/Antminer-Firmware-Internals/Antminer_S19_Pro_zynq7007_BHB42XXX/minerfs_no_header/ ./bmminer
 
