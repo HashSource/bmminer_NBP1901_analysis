@@ -61,7 +61,7 @@ for func_ea in binary_functions:
 
 # Filter Out Functions Without Strings
 FUNC_STRINGS_COUNT_FILTERED = list(
-    filter(lambda func_map: func_map["func_string_count"] >= 1, FUNC_STRINGS_COUNT)
+    filter(lambda func_map: func_map["func_string_count"] >= 2, FUNC_STRINGS_COUNT)
 )
 
 # Sort By Functions With Highest String Count
