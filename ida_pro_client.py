@@ -59,9 +59,16 @@ for func_ea in binary_functions:
         func_map = {"func_ea": func_ea, "func_string_count": func_string_count}
         FUNC_STRINGS_COUNT.append(func_map)
 
-# print("Sort Mapping By Functions With Highest String Count")
+# Filter Out Functions Without Strings
+FUNC_STRINGS_COUNT_FILTERED = list(
+    filter(lambda func_map: func_map["func_string_count"] >= 1, FUNC_STRINGS_COUNT)
+)
+
+# Sort By Functions With Highest String Count
 FUNC_STRINGS_COUNT_SORTED = sorted(
-    FUNC_STRINGS_COUNT, key=lambda mapping: mapping["func_string_count"], reverse=True
+    FUNC_STRINGS_COUNT_FILTERED,
+    key=lambda mapping: mapping["func_string_count"],
+    reverse=True,
 )
 
 total_functions_to_process = 0
