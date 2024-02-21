@@ -7,7 +7,8 @@
 #include <defs.h>
 
 #include <stdarg.h>
-
+#include <stdint.h>
+#include <stdio.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

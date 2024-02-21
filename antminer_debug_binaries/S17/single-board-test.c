@@ -6,8 +6,12 @@
 
 #include <defs.h>
 
+#include <openssl/sha.h>
+#include <pthread.h>
 #include <stdarg.h>
-
+#include <stdint.h>
+#include <stdio.h>
+#include <sys/types.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

@@ -7,7 +7,13 @@
 #include <defs.h>
 
 #include <stdarg.h>
-
+#include <pthread.h>
+#include <sys/time.h>
+#include <stdio.h>
+#include <semaphore.h>
+#include <string.h>
+#include <stdlib.h>
+#include <fcntl.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

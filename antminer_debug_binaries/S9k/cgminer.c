@@ -7,6 +7,8 @@
 #include <defs.h>
 
 #include <stdarg.h>
+#include <pthread.h>
+#include <stdint.h>
 
 
 //-------------------------------------------------------------------------

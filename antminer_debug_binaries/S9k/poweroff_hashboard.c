@@ -6,8 +6,13 @@
 
 #include <defs.h>
 
+#include <fcntl.h>
 #include <stdarg.h>
-
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/mman.h>
+#include <unistd.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

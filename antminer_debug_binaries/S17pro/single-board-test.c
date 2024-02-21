@@ -6,8 +6,11 @@
 
 #include <defs.h>
 
+#include <sys/types.h>
 #include <stdarg.h>
-
+#include <pthread.h>
+#include <openssl/sha.h>
+#include <stdio.h>
 
 //-------------------------------------------------------------------------
 // Function declarations
@@ -54,7 +57,7 @@ void *j_memset(void *s, int c, size_t n);
 // void *memset(void *s, int c, size_t n);
 // int putchar(int c);
 // int pthread_cancel(pthread_t th);
-ssize_t j_write(int fd, const void *buf, size_t n);
+size_t j_write(int fd, const void *buf, size_t n);
 // ssize_t write(int fd, const void *buf, size_t n);
 // int fclose(FILE *stream);
 // int munmap(void *addr, size_t len);
@@ -198,10 +201,10 @@ void __fastcall adjust_voltage(unsigned __int8 which_chain, unsigned __int8 whic
 unsigned int get_fan_speed(); // idb
 void __fastcall set_fan_speed(unsigned int speed);
 void __fastcall fan_control(unsigned __int8 level);
-void __fastcall sha256_transf(sha256_ctx *ctx, const unsigned __int8 *message, unsigned int block_nb);
-void __fastcall sha256_init(sha256_ctx *ctx);
-void __fastcall sha256_update(sha256_ctx *ctx, const unsigned __int8 *message, unsigned int len);
-void __fastcall sha256_final(sha256_ctx *ctx, unsigned __int8 *digest);
+void __fastcall sha256_transf(SHA256_CTX *ctx, const unsigned __int8 *message, unsigned int block_nb);
+void __fastcall sha256_init(SHA256_CTX *ctx);
+void __fastcall sha256_update(SHA256_CTX *ctx, const unsigned __int8 *message, unsigned int len);
+void __fastcall sha256_final(SHA256_CTX *ctx, unsigned __int8 *digest);
 void __fastcall sha256(const unsigned __int8 *message, unsigned int len, unsigned __int8 *digest);
 void *__fastcall BHB91601_show_status_func(void *arg);
 void *__fastcall BHB91601_send_func(void *arg);
@@ -224,10 +227,10 @@ void singleBoardTest_BHB91601_BM1391(); // idb
 int open_key(); // idb
 void close_key(); // idb
 ssize_t __fastcall read_key(unsigned __int8 *value);
-void __fastcall sha2_starts(sha2_context *ctx);
-void __fastcall sha2_process(sha2_context *ctx, const unsigned __int8 *data);
-void __fastcall sha2_update(sha2_context *ctx, const unsigned __int8 *input, int ilen);
-void __fastcall sha2_finish(sha2_context *ctx, unsigned __int8 *output);
+void __fastcall sha2_starts(SHA256_CTX *ctx);
+void __fastcall sha2_process(SHA256_CTX *ctx, const unsigned __int8 *data);
+void __fastcall sha2_update(SHA256_CTX *ctx, const unsigned __int8 *input, int ilen);
+void __fastcall sha2_finish(SHA256_CTX *ctx, unsigned __int8 *output);
 void __fastcall sha2(const unsigned __int8 *input, int ilen, unsigned __int8 *output);
 uint32_t __fastcall swab32(uint32_t v);
 void __fastcall flip_swab(void *dest_p, const void *src_p, unsigned int length);

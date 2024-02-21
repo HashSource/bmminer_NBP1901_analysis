@@ -7,7 +7,12 @@
 #include <defs.h>
 
 #include <stdarg.h>
-
+#include <sys/time.h>
+#include <stdio.h>
+#include <pthread.h>
+#include <openssl/sha.h>
+#include <semaphore.h>
+#include <klist.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

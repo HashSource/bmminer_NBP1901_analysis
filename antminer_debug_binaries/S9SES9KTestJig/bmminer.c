@@ -7,7 +7,7 @@
 #include <defs.h>
 
 #include <stdarg.h>
-
+#include <pthread.h>
 
 //-------------------------------------------------------------------------
 // Function declarations

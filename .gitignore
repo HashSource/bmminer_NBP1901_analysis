@@ -2,3 +2,4 @@
 .symbols
 decompile.log
 .mypy_cache
+.idea
