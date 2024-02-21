@@ -20,3 +20,12 @@ ghidrecomp ./T17e/cgminer &>./T17e/decompile.log
 ghidrecomp ./S17pro/single-board-test &>./S17pro/decompile.log
 
 ghidrecomp ./S17/single-board-test &>./S17/decompile.log
+
+ghidrecomp ./DR5/single-board-test &>./DR5/decompile.log
+ghidrecomp ./DR5/test_demo &>./DR5/decompile.log
+
+ghidrecomp ./Z9-mini/bm1740-test.exe &>./Z9-mini/decompile.log
+ghidrecomp ./Z9-mini/single-board-test &>./Z9-mini/decompile.log
+ghidrecomp ./Z9-mini/single-board-test-ok &>./Z9-mini/decompile.log
+ghidrecomp ./Z9-mini/single-board-test-default &>./Z9-mini/decompile.log
+ghidrecomp ./Z9-mini/test_demo &>./Z9-mini/decompile.log
