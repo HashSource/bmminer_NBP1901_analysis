@@ -29,3 +29,10 @@ ghidrecomp ./Z9-mini/single-board-test &>./Z9-mini/decompile.log
 ghidrecomp ./Z9-mini/single-board-test-ok &>./Z9-mini/decompile.log
 ghidrecomp ./Z9-mini/single-board-test-default &>./Z9-mini/decompile.log
 ghidrecomp ./Z9-mini/test_demo &>./Z9-mini/decompile.log
+
+ghidrecomp ./T17/cgminer &>./T17/decompile.log
+
+ghidrecomp ./Z11/single-board-test &>./Z11/decompile.log
+ghidrecomp ./Z11/z11-pcba &>./Z11/decompile.log
+
+ghidrecomp ./Z15/single-board-test &>./Z15/decompile.log
