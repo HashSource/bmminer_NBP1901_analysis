@@ -412,9 +412,9 @@ def main() -> None:
 Examples:
   %(prog)s 192.168.1.100                    # Install on single device
   %(prog)s 192.168.1.100 192.168.1.101      # Install on multiple devices
-  %(prog)s config/devices.txt               # Install from file
+  %(prog)s devices.txt               # Install from file
   %(prog)s 192.168.1.100 -f 650 -v 1350     # Custom frequency/voltage
-  %(prog)s config/devices.txt -t 10         # Use 10 parallel threads
+  %(prog)s devices.txt -t 10         # Use 10 parallel threads
         """,
     )
 

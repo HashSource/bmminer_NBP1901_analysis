@@ -64,7 +64,7 @@ Install on multiple devices:
 Install from a file containing IP addresses:
 
 ```bash
-./install_hashsource.py config/devices.txt
+./install_hashsource.py devices.txt
 ```
 
 ### Custom Parameters
@@ -78,7 +78,7 @@ Specify custom frequency and voltage:
 Control parallel installations (default is 5):
 
 ```bash
-./install_hashsource.py config/devices.txt -t 10
+./install_hashsource.py devices.txt -t 10
 ```
 
 ### Command Line Options
@@ -128,7 +128,7 @@ The script uses Keystone Engine to properly assemble ARM instructions, with a fa
 ## Important Files
 
 - `bmminer_no_fan_check`: Required template binary (must be in same directory)
-- `config/devices.txt`: Optional file containing target IP addresses
+- `devices.txt`: Optional file containing target IP addresses
 
 ## Pool Configuration
 
